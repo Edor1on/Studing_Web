@@ -1,44 +1,267 @@
-/* 1. Звертаємося до тегів напряму */
+/* =========================================
+   1. ЗАГАЛЬНІ СТИЛІ (General)
+   ========================================= */
 body {
-    font-family: Arial, sans-serif; /* Нормальний шрифт замість старого */
-    background-color: #f0f0f0;      /* Світло-сірий фон сторінки */
+    background-color: powderblue;
+    font-family: Arial, sans-serif; /* Стандартний шрифт для кращої читабельності */
+    margin: 20px;
 }
 
-h1 {
-    color: darkblue;
+/* ...інші стилі... */
+
+.box {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 10px 0;
+}
+
+/* =========================================
+   2. ТИПОГРАФІЯ ТА ТЕКСТ (Typography)
+   ========================================= */
+.font-courier {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.text-center {
     text-align: center;
 }
 
-/* 2. Звертаємося до КЛАСІВ (починається з крапки .) */
-
-/* Твоя секція про компанію */
-.About_company {
-    background-color: white; /* Білий фон блоку */
-    padding: 20px;           /* Внутрішні відступи, щоб текст не лип до країв */
-    border: 2px solid orange; /* Помаранчева рамка */
-    border-radius: 10px;      /* Закруглені кути */
-    margin-bottom: 20px;      /* Відступ знизу до наступного блоку */
+.text-large {
+    font-size: 20px;
 }
 
-/* Твоя таблиця */
-.Table {
-    background-color: #e6e6fa; /* Лавандовий колір */
-    padding: 15px;
-    border-radius: 10px;
+.text-big {
+    font-size: 1.2em; /* Заміна застарілого тегу <big> */
 }
 
-/* Стилізуємо кнопку */
-button {
-    background-color: tomato;
+/* Кольорові класи для тексту */
+.tomato-text {
+    color: tomato;
+}
+
+.bg-dodgerblue {
+    background-color: DodgerBlue;
     color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer; /* Курсор стає ручкою при наведенні */
-    font-size: 16px;
+    padding: 5px;
 }
 
-/* Ефект при наведенні мишкою на кнопку */
-button:hover {
+.rtl-text {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+.highlight-span {
+    background-color: purple;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+/* =========================================
+   3. БЛОКИ ТА РАМКИ (Blocks & Borders)
+   ========================================= */
+.alert {
+    padding: 10px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+/* Модифікатори */
+.alert--error {
     background-color: red;
+}
+
+.alert--info {
+    background-color: blue;
+}
+
+.box {
+    padding: 20px;
+    border: 1px solid black;
+    margin: 10px 0;
+}
+
+.alert-box {
+    color: yellow;
+    background-color: black;
+    padding: 10px;
+}
+
+.border-yellow {
+    border: 2px solid yellow;
+    padding: 5px;
+}
+
+.div-red {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.div-blue {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+/* =========================================
+   4. ЗОБРАЖЕННЯ (Images)
+   ========================================= */
+.icon-small {
+    width: 30px;
+    height: 30px;
+}
+
+.img-standard {
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Щоб фото не сплющувалося */
+}
+
+/* =========================================
+   5. СПИСКИ (Lists)
+   ========================================= */
+.list-circle {
+    list-style-type: circle;
+}
+
+.list-square {
+    list-style-type: square;
+}
+
+.list-latin {
+    list-style-type: lower-latin;
+}
+
+/* =========================================
+   6. ТАБЛИЦІ (Tables)
+   ========================================= */
+.styled-table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.styled-table th, 
+.styled-table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.table-head-yellow {
+    background-color: yellow;
+}
+
+.table-body-center {
+    text-align: center;
+}
+
+.table-bordered {
+    border: 2px solid black;
+}
+
+.status-highlight {
+    color: red;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* =========================================
+   7. ФОРМИ (Forms)
+   ========================================= */
+.form-group {
+    margin-bottom: 15px;
+    display: block;
+}
+
+.form-group label {
+    display: inline-block;
+    min-width: 150px; /* Вирівнює інпути в лінію */
+    font-weight: bold;
+}
+
+.form-actions {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.input-large {
+    width: 200px;
+    height: 30px;
+}
+
+.error-label {
+    color: rgb(255, 0, 0);
+    background-color: black;
+    padding: 2px;
+}
+
+/* =========================================
+   8. СТРУКТУРА ТА МАКЕТ (Layout)
+   ========================================= */
+/* Головний контейнер для Flexbox */
+.layout-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Навігація */
+.site-nav {
+    flex: 1; /* 1 частина ширини */
+    background-color: #eee;
+    padding: 10px;
+}
+
+/* Основний контент */
+main {
+    flex: 3; /* 3 частини ширини */
+}
+
+/* Бокова панель */
+aside {
+    flex: 1; /* 1 частина ширини */
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-left: 5px solid #ccc;
+}
+
+/* Футер */
+footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 3px solid black;
+}
+
+/* Прогрес бар */
+progress {
+    width: 100%;
+    height: 20px;
+}
+
+/* =========================================
+   9. УТИЛІТИ (Utilities / Helpers)
+   ========================================= */
+.spacer-top {
+    margin-top: 50px;
+}
+
+.spacer-small {
+    margin-top: 10px;
+}
+
+
+
+/* Робимо відступи для демонстраційних тегів HTML5 */
+header, nav, main, aside, footer, section, article {
+    margin-bottom: 20px;
+    display: block;
+    
+    /* Щоб ти краще їх бачив, давай додамо легку рамку (можна потім прибрати) */
+    border: 1px dashed gray; 
+    padding: 10px;
 }

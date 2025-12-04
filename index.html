@@ -2,6 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- адаптація під всі девайси -->
     <title>HTML Cheat Sheet by Adrian</title>
     
     <meta name="author" content="Adrian">
@@ -11,10 +12,7 @@
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="style.scss"> 
     <!--<link rel="stylesheet" href="css/style.scss"> -->
-    
-    <style>
-        .box { padding: 20px; border: 1px solid black; margin: 10px 0; }
-    </style>
+
 </head>
 
 <!-- <body style="background-color: powderblue;"> -->
@@ -23,283 +21,323 @@
     <a href="#bottom">🔽 Прогорнути вниз (до футера)</a>
     <hr>
 
-    <h1>My Balbus does not pay salary!</h1>
-    <h2 style="font-family: courier;">Його позиція була твердіша за камінь</h2>
-    <h3 style="text-align: center;">Юрине розчарування (по центру)</h3>
-    
-    <h4 style="color: tomato;">Просто кольоровий заголовок</h4>
-    <h5 style="background-color: DodgerBlue;">Заголовок з фоном</h5>
-    <h6 style="border: 2px solid yellow;">Заголовок з рамкою</h6>
+    <section class="intro">
+        <h1>My Balbus does not pay salary!</h1>
+        <h2 class="font-courier">Його позиція була твердіша за камінь</h2>
+        <h3 class="text-center">Юрине розчарування (по центру)</h3>
+        
+        <h4 class="tomato-text">Просто кольоровий заголовок</h4>
+        <h5 class="bg-dodgerblue">Заголовок з фоном</h5>
+        <h6 class="border-yellow">Заголовок з рамкою</h6>
+    </section>
 
     <hr>
 
-    <p style="color: yellow; background-color: black;">
-        Трагедія року: Юра та Адріан не отримали зарплату. Це приклад звичайного абзацу з кольором тексту.
-    </p>
+<section class="text-examples">
+        <p class="alert-box">
+            Трагедія року: Юра та Адріан не отримали зарплату. Це приклад звичайного абзацу з кольором тексту.
+        </p>
 
-    <p style="font-size: 20px;">
-        Це параграф. Браузер ігнорує зайві пробіли      та переноси рядків у коді,
-        якщо це звичайний тег p.
-    </p>
+        <p class="text-large">
+            Це параграф. Браузер ігнорує зайві пробіли та переноси рядків у коді, якщо це звичайний тег p.
+        </p>
 
-    <p>
-        Рядок один.<br>
-        Рядок два (після тегу br).<br>
-        Рядок три.
-    </p>
+        <p>
+            Рядок один.<br>
+            Рядок два (після тегу br).<br>
+            Рядок три.
+        </p>
 
-    <pre>
+        <pre>
     Цей текст у тезі PRE:
         зберігає всі    пробіли
         і переноси рядків.
     Зручно для віршів або коду.
-    </pre>
+        </pre>
+    </section>
 
     <hr>
 
-    <p>
-        <b>Bold (Жирний візуально)</b> <br>
-        <strong>Strong (Важливий жирний - для семантики/SEO)</strong> <br>
-        <i>Italic (Курсив візуально)</i> <br>
-        <em>Emphasized (Курсив - логічний акцент)</em> <br>
-        <mark>Marked (Виділений маркером)</mark> <br>
-        <small>Small (Маленький текст)</small> <br>
-        <del>Deleted (Закреслений текст)</del> <br>
-        <ins>Inserted (Підкреслений як вставка)</ins> <br>
-        H<sub>2</sub>O (Subscript - нижній індекс) <br>
-        X<sup>2</sup> (Superscript - верхній індекс) <br>
-        <u>Underline (Підкреслений)</u> <br>
-        <big>Big (Великий текст - застаріле)</big>
-    </p>
+<section class="formatting">
+        <p>
+            <b>Bold (Жирний візуально)</b> <br>
+            <strong>Strong (Важливий жирний)</strong> <br>
+            <i>Italic (Курсив візуально)</i> <br>
+            <em>Emphasized (Логічний акцент)</em> <br>
+            <mark>Marked (Маркер)</mark> <br>
+            <small>Small (Маленький)</small> <br>
+            <del>Deleted (Закреслений)</del> <br>
+            <ins>Inserted (Вставка)</ins> <br>
+            H<sub>2</sub>O (Subscript) <br>
+            X<sup>2</sup> (Superscript) <br>
+            <u>Underline (Підкреслений)</u> <br>
+            <span class="text-big">Big (Великий текст)</span>
+        </p>
 
-    <code>console.log("Це виглядає як комп'ютерний код");</code>
-
-    <p><bdo dir="rtl">Цей текст написаний справа наліво (Right to Left)</bdo></p>
-
-    <hr>
-
-    <p>Цитата з сайту WWF:</p>
-    <blockquote cite="http://www.worldwildlife.org">
-        For 60 years, WWF has worked to help people and nature thrive.
-    </blockquote>
-
-    <p>Ціль WWF: <q>Build a future where people live in harmony with nature.</q></p>
-
-    <p><abbr title="HyperText Markup Language">HTML</abbr> - це круто.</p>
-    
-    <p><cite>The Scream</cite> by Edvard Munch.</p>
-
-    <address>
-        Адріан Захарко<br>
-        Вулиця Програмістів, 1<br>
-        Україна
-    </address>
+        <code>console.log("Це виглядає як комп'ютерний код");</code>
+        <p><bdo dir="rtl">Цей текст написаний справа наліво (Right to Left)</bdo></p>
+    </section>
 
     <hr>
 
-    <h3>Нумерований список (Ordered List - OL)</h3>
-    <ol start="2" type="I">
-        <li>Buy milk</li>
-        <li>Get salary from Balbus</li>
-        <li><b>Buy mechanical keyboard</b></li>
-    </ol>
+<section class="quotes">
+        <p>Цитата з сайту WWF:</p>
+        <blockquote cite="http://www.worldwildlife.org">
+            For 60 years, WWF has worked to help people and nature thrive.
+        </blockquote>
 
-    <h3>Маркований список (Unordered List - UL)</h3>
-    <ul type="circle">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>
-            Вкладений список:
-            <ol type="a">
-                <li>React</li>
-                <li>Node.js</li>
-            </ol>
-        </li>
-    </ul>
+        <p>Ціль WWF: <q>Build a future where people live in harmony with nature.</q></p>
+        <p><abbr title="HyperText Markup Language">HTML</abbr> - це круто.</p>
+        <p><cite>The Scream</cite> by Edvard Munch.</p>
+
+        <address>
+            Адріан Захарко<br>
+            Вулиця Програмістів, 1<br>
+            Україна
+        </address>
+    </section>
 
     <hr>
 
-    <h3>Абсолютні URL (на зовнішні сайти)</h3>
-    <p><a href="https://www.google.com/" target="_blank">Google (нова вкладка)</a></p>
-    <p><a href="https://www.instagram.com/a.balbus" title="Підказка при наведенні">Instagram Balbus</a></p>
+<section class="lists">
+        <h3>Нумерований список (OL)</h3>
+        <ol start="2" type="I">
+            <li>Buy milk</li>
+            <li>Get salary from Balbus</li>
+            <li><b>Buy mechanical keyboard</b></li>
+        </ol>
 
-    <h3>Відносні URL (на свої файли)</h3>
-    <p><a href="about.html">Про нас (посилання на файл в тій же папці)</a></p>
-    
-    <h3>Спеціальні посилання</h3>
-    <p><a href="mailto:zakharkoadr@gmail.com">Написати на Email</a></p>
-    
-    <a href="https://google.com">
-        <img src="smiley.gif" alt="Смайлик посилання" style="width:30px;height:30px;">
-    </a>
-
-    <hr>
-
-    <h3>Картинки</h3>
-    <img src="AlexBalbus.jpg" alt="Фото Бальбуса" width="150" height="150">
-    <img src="https://via.placeholder.com/150" alt="Плейсхолдер з інтернету" width="150">
-
-    <hr>
-
-    <h3>Блокові елементи (Div)</h3>
-    <p>Займають всю ширину, кожен починається з нового рядка:</p>
-    <div style="background-color: red; color: white;">Я перший DIV блок</div>
-    <div style="background-color: blue; color: white;">Я другий DIV блок</div>
-
-    <h3>Рядкові елементи (Span)</h3>
-    <p>Йдуть в рядок, як слова в реченні:</p>
-    <p>
-        Привіт, мене звати Адріан, я вивчаю <span style="background-color: purple; color: white; padding: 5px;">HTML</span> та CSS.
-    </p>
+        <h3>Маркований список (UL)</h3>
+        <ul class="list-circle">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>
+                Вкладений список:
+                <ol type="a">
+                    <li>React</li>
+                    <li>Node.js</li>
+                </ol>
+            </li>
+        </ul>
+    </section>
 
     <hr>
 
-    <h3>Таблиця працівників</h3>
-    <table border="1" width="400">
-        <thead style="background-color: yellow;">
-            <tr>
-                <th>Imya</th>   <th>Vik</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody style="text-align: center;">
-            <tr>
-                <td>Adrian</td> <td>19</td>
-                <td>Fullstack (in progress)</td>
-            </tr>
-            <tr>
-                <td>Yura</td>
-                <td>18</td>
-                <td>Waiting for salary</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="3"><b>Всього: 2 людини без зарплати</b></td>
-                <!-- rowspan="2" це буде по вертикалі об'єднювати --> 
-            </tr>
-        </tfoot>
-    </table>
+<section class="links">
+        <h3>Абсолютні URL</h3>
+        <p><a href="https://www.google.com/" target="_blank">Google (нова вкладка)</a></p>
+        <p><a href="https://www.instagram.com/a.balbus" title="Підказка при наведенні">Instagram Balbus</a></p>
 
-    <hr>
-
-    <h3>Форма реєстрації (Типи інпутів)</h3>
-    
-    <form action="#" method="POST">
-        <label for="user_name">Ваше ім'я:</label>
-        <input type="text" id="user_name" name="user_name" placeholder="Введіть ім'я" value="Yura"><br><br>
-
-        <label>Пароль:</label>
-        <input type="password" name="pass"><br><br>
-
-        <label>Email:</label>
-        <input type="email" name="user_email" placeholder="...@gmail.com"><br><br>
-
-        <label>Улюблений колір:</label>
-        <input type="color" name="fav_color"><br><br>
-
-        <label>Дата народження:</label>
-        <input type="date" name="bday"><br><br>
-        <label>Час:</label>
-        <input type="time" name="meeting_time"><br><br>
-
-        <label>Згідний з умовами?</label>
-        <input type="checkbox" name="agree" checked><br><br>
-
-        <p>Ваша стать:</p>
-        <input type="radio" id="male" name="sex" value="male" checked>
-        <label for="male">Чоловік</label><br>
-        <input type="radio" id="female" name="sex" value="female">
-        <label for="female">Жінка</label><br><br>
-
-        <label>Завантажити резюме:</label>
-        <input type="file" name="resume"><br><br>
-
-        <input type="submit" value="Відправити дані (Submit)">
-        <input type="reset" value="Очистити форму (Reset)">
+        <h3>Відносні URL</h3>
+        <p><a href="about.html">Про нас</a></p>
         
-        <button type="button" onclick="alert('Hello Adrian!')">Просто JS кнопка</button>
-    </form>
+        <h3>Спеціальні посилання</h3>
+        <p><a href="mailto:zakharkoadr@gmail.com">Написати на Email</a></p>
+        
+        <a href="https://google.com">
+            <img src="smiley.gif" alt="Смайлик посилання" class="icon-small">
+        </a>
+    </section>
+
+    <hr>
+
+<section class="images">
+        <h3>Картинки</h3>
+        <img src="AlexBalbus.jpg" alt="Фото Бальбуса" class="img-standard">
+        <img src="https://via.placeholder.com/150" alt="Плейсхолдер" class="img-standard">
+    </section>
+
+    <hr>
+
+<section class="blocks">
+        <h3>Блокові елементи (Div)</h3>
+        <!-- <div class="div-red">Я перший DIV блок</div>
+        <div class="div-blue">Я другий DIV блок</div> -->
+
+        <!-- <p> Good wersion </p> -->
+        <div class="alert alert--error">Я перший DIV блок</div> 
+        <div class="alert alert--info">Я другий DIV блок</div>
+
+        <h3>Рядкові елементи (Span)</h3>
+        <p>
+            Привіт, мене звати Адріан, я вивчаю <span class="highlight-span">HTML</span> та CSS.
+        </p>
+    </section>
+
+    <hr>
+
+
+    <section>
+        <h3>Таблиця працівників</h3>
+        <table>
+          <thead>
+                 <tr>
+                    <th>Imya</th>   <th>Vik</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Adrian</td> <td>19</td>
+                    <td>Fullstack (in progress)</td>
+                </tr>
+                <tr>
+                 <td>Yura</td>
+                    <td>18</td>
+                    <td>Waiting for salary</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3"><b>Всього: 2 людини без зарплати</b></td>
+                    <!-- rowspan="2" це буде по вертикалі об'єднювати --> 
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <hr>
+
+<section class="forms">
+        <h3>Форма реєстрації</h3>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="user_name">Ваше ім'я:</label>
+                <input type="text" id="user_name" name="user_name" placeholder="Введіть ім'я" value="Yura">
+            </div>
+
+            <div class="form-group">
+                <label for="user_password">Пароль:</label>
+                <input type="password" id="user_password" name="pass">
+            </div>
+
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="user_email" placeholder="...@gmail.com">
+            </div>
+
+            <div class="form-group">
+                <label>Улюблений колір:</label>
+                <input type="color" name="fav_color">
+            </div>
+
+            <div class="form-group">
+                <label>Дата народження:</label>
+                <input type="date" name="bday">
+            </div>
+
+            <div class="form-group">
+                <label>Час:</label>
+                <input type="time" name="meeting_time">
+            </div>
+
+            <div class="form-group">
+                <label>Згідний з умовами?</label>
+                <input type="checkbox" name="agree" checked>
+            </div>
+
+            <div class="form-group">
+                <p>Ваша стать:</p>
+                <input type="radio" id="male" name="sex" value="male" checked>
+                <label for="male">Чоловік</label>
+                <input type="radio" id="female" name="sex" value="female">
+                <label for="female">Жінка</label>
+            </div>
+
+            <div class="form-group">
+                <label>Завантажити резюме:</label>
+                <input type="file" name="resume">
+            </div>
+
+            <div class="form-actions">
+                <input type="submit" value="Відправити дані">
+                <input type="reset" value="Очистити форму">
+                <button type="button" onclick="alert('Hello Adrian!')">Просто JS кнопка</button>
+            </div>
+        </form>
+    </section>
+
+    <hr>
+
+<section class="forms spacer-top">
+        <h3>Again form</h3>
+        <p>Form textarea</p>
+        <form action="" method="post">
+            <textarea placeholder="Enter text for Balbus" maxlength="50" required>some text for...</textarea>
+            <div class="form-actions">
+                <button type="button">type button</button>
+                <button type="reset">type rest</button>
+                <button type="submit">type submit</button>
+            </div>
+        </form>
+    </section>
+
+
+<section class="forms spacer-top">
+        <form>
+            <select>
+                <option disabled selected>----</option>
+                <option value="audi">Audi</option>
+                <option value="bmw">BMW</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="honda">Honda</option>
+            </select>
+            
+            <div class="spacer-small"></div>
+
+            <select multiple size="2">
+                <option disabled selected> CAPOERA </option>
+                <option value="karina">Karina</option>
+                <option value="uliana">Uliana</option>
+                <option value="polina">Polina</option>
+            </select>
+        </form>
+    </section>
 
 
 
 
-    <br><br><br><br><br>
-    <h3> Again form </h3>
-    <p style="color: rgb(255, 0, 0); background-color: black;"> Form textarea </p>
-    <form action="" method="post">
-        <textarea placeholder="Enter text for Balbus " maxlength="50" required> some text for... </textarea>
-        <br>
-        <button type="button"> type button </button>
-        <br>
-        <button type="reset"> type rest </button>
-        <br>
-        <button type="submit"> type submit </button>
-    </form>
 
-    <br><br><br><br><br>
+<section class="tables spacer-top">
+        <p><strong>Test from <span class="div-blue">Gemini</span></strong></p>
+        <table class="styled-table table-bordered">
+            <thead>
+                <tr>
+                    <th>Time</th> <th>Monday</th> <th>Tuesday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10:00</td> <td colspan="2" class="text-center">math</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>13:00</td> <td colspan="2" class="text-center">lunch</td>
+                </tr>
+            </tfoot>
+        </table>
+        <button type="button">Download</button>
+    </section>
 
-    <form>
-        <select>
-            <option disabled selected>----</option>
-            <option value="audi">Audi</option>
-            <option value="bmw">BMW</option>
-            <option value="mercedes">Mercedes</option>
-            <option value="honda">Honda</option>
-        </select>
-<br><br>
-        <select multiple size="2">
-            <option disabled selected> CAPOERA </option>
-            <option value="karina">Karina</option>
-            <option value="uliana">Uliana</option>
-            <option value="polina">Polina</option>
-        </select>
-    </form>
-
-
-
-
-
-    <br><br><br><br><br>
-    <p><strong> Test from <span style="color:red; background-color: blue">Gmini</span></strong></p>
-<!--К.р з ШІ-->
-        <table border="2" width="500">
-        <thead>
-            <tr>
-                <th>Time</th> <th>Monday</th> <th>Tuesday</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td> 10:00 </td> <td colspan="2" align="center"> math </td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td> 13:00 </td> <td colspan="2" align="center"> lunch </td>
-            </tr>
-        </tfoot>
-    </table>
-
-    <button type="button"> Download </button>
-
-
-    <br><br><br><br><br>
+    <hr>
 
     <h2>HTML5 tag</h2>
-    <p> Стара механіка </p>
-    <div id="header"> Header </div> <!-- стара механіка -->
+        <p> Стара механіка </p>
+        <div id="header"> Header </div>
 
-    <header> шапка сайту </header><br>
-    <nav> Menu </nav><br>
-    <main> основна частина </main><br>
-    <aside> Бокова частина </aside><br>
-    <footer> нижня частина </footer><br><br><br>
-    <section> Смисловий розділ (група контенту однієї теми) </section><br>
-    <article> Самостійний матеріал (новина, пост, товар) </article><br>
-    <aside> Додатковий контент (бокова панель, реклама) </aside><br>
+        <header> шапка сайту </header>
+        <nav> Menu </nav>
+        <main> основна частина </main>
+        <aside> Бокова частина </aside>
+        <footer> нижня частина </footer>
 
+        <section> Смисловий розділ </section>
+        <article> Самостійний матеріал </article>
+        <aside> Додатковий контент </aside>
+
+    <hr>
 
     <p> Progress bar </p>
     <progress max="100" value="93"> Заповнено на 93 зі 100 </progress> <br>
@@ -311,86 +349,107 @@
         Тяжкий етап пройшов юра та  BFG iTech, але обоє не задлись.
     </details>
 
-    <br><br><br><br><br>    <br><br><br><br><br>
+    <hr>
 
 
 <!-- Section -->
 
-    <h1> Tag section </h1>
+<header class="site-header">
+        <h2>HTML5 tag & BFG iTech</h2>
+    </header>
 
-   <header> Тіпа дуже потужний сайт </header>
-   <main>
-    <section class="About_company">
-        <h2> Компанія BFG iTech робить сайт і Адріан з Юрою там працють </h2>
-        <p> Їхній прихід = успіх </p>
-    </section>
+    <div class="layout-container">
+        <nav class="site-nav">
+            <ul>
+                <li>Menu Item 1</li>
+                <li>Menu Item 2</li>
+            </ul>
+        </nav>
 
-    <article>
-           <h1>Назва статті Артикель</h1>
-           <p>Самостійний матеріал (новина, пост, товар)</p>
-    </article>
+        <main>
+            <section class="about-company">
+                <h2>Компанія BFG iTech</h2>
+                <p>Компанія BFG iTech робить сайт і Адріан з Юрою там працють. Їхній прихід = успіх.</p>
+            </section>
 
-    <section class="Table">
-        <h3> Table sacessfull </h3>
-        <table border="1" width="500">
-            <thead>
-                <tr>
-                    <th> День </th> <th> completed clients </th> <th> price </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td> Adrian </td><td></td><td></td>
-                </tr>
-                <tr>
-                    <td> Yura </td><td></td><td></td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td> Висновок </td> <td colspan="2" align="center" > <span id="for tables" style="background-color: yellowgreen; color: darkblue" >лохи ми чи ні?</span> </td>
-                </tr>
-            </tfoot>
-        </table>
-        <br>
-        <form action="" method="POST">
-            <textarea placeholder="Напишіть короткий звіт про виконану роботу сьогодні" maxlength="100" required>some text...
-            </textarea>
-                    <br>
-        <button type="submit"> <strong>Відправити дані Бальбусу</strong></button>
-        </form>
+            <article>
+                <h1>Назва статті Артикель</h1>
+                <p>Самостійний матеріал (новина, пост, товар).</p>
+            </article>
 
-    </section>
-    <section class="servise_BFG_iTech">
-        <h2> Чим ми займаємось? </h2>
-        <ol start="1" type="1">
-            <li> <strong>Розробка веб сайтів</strong></li>
-            <li> Абгрейд онлай присутності </li>
-            <li> Реклама 
-                <ul type="square">
-                    <li> Better host </li>
-                    <li> Also all is better </li>
-                </ul>
-            </li>
-        </ol>
-    </section>
+            <section class="section-table">
+                <h3>Table successful</h3>
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>День</th> <th>completed clients</th> <th>price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Adrian</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td>Yura</td><td></td><td></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Висновок</td> 
+                            <td colspan="2" class="text-center">
+                                <span class="status-highlight">лохи ми чи ні?</span>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                
+                <form action="" method="POST" class="spacer-small">
+                    <textarea placeholder="Напишіть звіт" maxlength="100" required>some text...</textarea>
+                    <div class="form-actions">
+                        <button type="submit"><strong>Відправити дані Бальбусу</strong></button>
+                    </div>
+                </form>
+            </section>
 
-    <section class="rewiwes">
-        <details>
-            <summary> Що каже Юра? </summary>
-            <q> Зарплати нема, але ми тримаємось </q>
-        </details>
-    </section>
-    </main>
+            <section class="servise_BFG_iTech">
+                <h2>Чим ми займаємось?</h2>
+                <ol>
+                    <li><strong>Розробка веб сайтів</strong></li>
+                    <li>Апгрейд онлайн присутності</li>
+                    <li>Реклама 
+                        <ul class="list-square">
+                            <li>Better host</li>
+                            <li>Also all is better</li>
+                        </ul>
+                    </li>
+                </ol>
+            </section>
 
-    <aside> Реклама </aside>
+            <section class="reviews">
+                <details>
+                    <summary>Що каже Юра?</summary>
+                    <q>Зарплати нема, але ми тримаємось</q>
+                </details>
+            </section>
+            
+            <p>Progress bar</p>
+            <progress max="100" value="93">93%</progress>
 
-    <footer>
-        <h3> Контакти </h3>
-        <label for="report"> Your report about this situation </label>
-        <input id="report" name="Repots_another_people" placeholder="Enter some text" width="200" height="200">
+        </main>
+
+        <aside class="site-aside">
+            <h3>Реклама</h3>
+            <p>Тут могла бути ваша реклама</p>
+        </aside>
+    </div>
+
+    <footer class="site-footer">
+        <h3>Контакти</h3>
+        <label for="report">Your report about this situation</label>
+        <input id="report" name="Repots_another_people" placeholder="Enter some text" class="input-large">
+        
         <form>
-            <p> Ваш рівень задоволення? </p>
+            <p>Ваш рівень задоволення?</p>
             <select>
                 <option value="Great">Great</option>
                 <option value="Good">Good</option>
@@ -400,17 +459,12 @@
             </select>
         </form>
 
-        <a href="mailto:zakharkoadr@gmail.com"> Write email for help him jr you need a web develop??? </a>
+        <a href="mailto:zakharkoadr@gmail.com">Write email for help</a>
         <button type="button" onclick="alert('Hello you')">Drop to AlexBalbus</button>
+        
+        <h3 id="bottom">Це футер сторінки (низ)</h3>
+        <a href="#">🔼 Повернутися нагору</a>
     </footer>
-
-
-
-    <br><br><br><br><br>
-
-    <hr>
-    <h3 id="bottom">Це футер сторінки (низ)</h3>
-    <a href="#">🔼 Повернутися нагору</a>
 
     <script src="js/main.js"></script>
 
