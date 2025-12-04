@@ -1,0 +1,987 @@
+Introduction
+
+
+
+6 lessons
+
+•
+
+3 exercises
+
+Free
+
+
+
+Editors
+
+
+
+6 lessons
+
+Free
+
+
+
+Basic Examples
+
+
+
+6 lessons
+
+•
+
+4 exercises
+
+Free
+
+
+
+Elements
+
+5 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Attributes
+
+10 lessons
+
+•
+
+5 exercises
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+Headings
+
+3 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Paragraphs
+
+5 lessons
+
+•
+
+6 exercises
+
+
+
+Paid
+
+
+
+Styles
+
+7 lessons
+
+•
+
+7 exercises
+
+
+
+Paid
+
+
+
+Text Formatting
+
+10 lessons
+
+•
+
+6 exercises
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+Quotation and Citation Elements
+
+7 lessons
+
+•
+
+5 exercises
+
+
+
+Paid
+
+
+
+Comments
+
+5 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Colors
+
+5 lessons
+
+•
+
+3 exercises
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+RGB and RGBA Colors
+
+3 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+HEX Colors
+
+2 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+HSL and HSLA Colors
+
+5 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Styles - CSS
+
+11 lessons
+
+•
+
+5 exercises
+
+
+
+Paid
+
+
+
+Links
+
+10 lessons
+
+•
+
+5 exercises
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+Links - Different Colors
+
+2 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Links - Create Bookmarks
+
+2 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Images
+
+12 lessons
+
+•
+
+7 exercises
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+Image Maps
+
+10 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Background Images
+
+5 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+<picture> Element
+
+2 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Favicon
+
+2 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Page Title
+
+2 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Tables
+
+4 lessons
+
+•
+
+3 exercises
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+Table Borders
+
+6 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Table Sizes
+
+3 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Table Headers
+
+5 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Table Padding & Spacing
+
+2 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Table Colspan & Rowspan
+
+2 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Table Styling
+
+5 lessons
+
+
+
+Paid
+
+
+
+Table Colgroup
+
+5 lessons
+
+
+
+Paid
+
+
+
+Lists
+
+3 lessons
+
+•
+
+3 exercises
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+Unordered Lists
+
+9 lessons
+
+•
+
+4 exercises
+
+
+
+Paid
+
+
+
+Ordered Lists
+
+10 lessons
+
+•
+
+4 exercises
+
+
+
+Paid
+
+
+
+Other Lists
+
+2 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Block and Inline Elements
+
+5 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Div Element
+
+9 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+class Attribute
+
+6 lessons
+
+•
+
+4 exercises
+
+
+
+Paid
+
+
+
+id Attribute
+
+5 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Iframes
+
+5 lessons
+
+•
+
+5 exercises
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+JavaScript
+
+3 lessons
+
+•
+
+5 exercises
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+File Paths
+
+4 lessons
+
+
+
+Paid
+
+
+
+The Head Element
+
+9 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Layout Elements and Techniques
+
+5 lessons
+
+
+
+Paid
+
+
+
+Responsive Web Design
+
+9 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Computer Code Elements
+
+6 lessons
+
+•
+
+4 exercises
+
+
+
+Paid
+
+
+
+Semantic Elements
+
+11 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Style Guide
+
+24 lessons
+
+
+
+Paid
+
+
+
+Entities
+
+4 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Symbols
+
+4 lessons
+
+
+
+Paid
+
+
+
+Using Emojis in HTML
+
+6 lessons
+
+
+
+Paid
+
+
+
+Encoding (Character Sets)
+
+4 lessons
+
+
+
+Paid
+
+
+
+Uniform Resource Locators
+
+5 lessons
+
+
+
+Paid
+
+
+
+Versus XHTML
+
+11 lessons
+
+
+
+Paid
+
+
+
+Forms
+
+8 lessons
+
+•
+
+3 exercises
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+Form Attributes
+
+5 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Form Elements
+
+11 lessons
+
+•
+
+4 exercises
+
+
+
+Paid
+
+
+
+Input Types
+
+24 lessons
+
+•
+
+6 exercises
+
+
+
+Paid
+
+
+
+Input Attributes
+
+15 lessons
+
+•
+
+5 exercises
+
+
+
+Paid
+
+
+
+Input form* Attributes
+
+7 lessons
+
+•
+
+3 exercises
+
+
+
+Paid
+
+
+
+Canvas Graphics
+
+9 lessons
+
+
+
+Paid
+
+
+
+SVG Graphics
+
+10 lessons
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+Multimedia
+
+4 lessons
+
+
+
+Paid
+
+
+
+Video
+
+7 lessons
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+Audio
+
+5 lessons
+
+
+
+Paid
+
+
+
+Plug-ins
+
+3 lessons
+
+
+
+Paid
+
+
+
+YouTube Videos
+
+7 lessons
+
+
+
+Paid
+
+
+
+What is a Web API?
+
+2 lessons
+
+•
+
+1 challenge
+
+
+
+Paid
+
+
+
+Geolocation API
+
+6 lessons
+
+
+
+Paid
+
+
+
+Drag and Drop API
+
+6 lessons
+
+
+
+Paid
+
+
+
+Web Storage API
+
+6 lessons
+
+
+
+Paid
+
+
+
+Web Workers API

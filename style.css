@@ -1,0 +1,44 @@
+/* 1. Звертаємося до тегів напряму */
+body {
+    font-family: Arial, sans-serif; /* Нормальний шрифт замість старого */
+    background-color: #f0f0f0;      /* Світло-сірий фон сторінки */
+}
+
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+/* 2. Звертаємося до КЛАСІВ (починається з крапки .) */
+
+/* Твоя секція про компанію */
+.About_company {
+    background-color: white; /* Білий фон блоку */
+    padding: 20px;           /* Внутрішні відступи, щоб текст не лип до країв */
+    border: 2px solid orange; /* Помаранчева рамка */
+    border-radius: 10px;      /* Закруглені кути */
+    margin-bottom: 20px;      /* Відступ знизу до наступного блоку */
+}
+
+/* Твоя таблиця */
+.Table {
+    background-color: #e6e6fa; /* Лавандовий колір */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Стилізуємо кнопку */
+button {
+    background-color: tomato;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; /* Курсор стає ручкою при наведенні */
+    font-size: 16px;
+}
+
+/* Ефект при наведенні мишкою на кнопку */
+button:hover {
+    background-color: red;
+}
