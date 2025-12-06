@@ -32,3 +32,98 @@ div > p,
 span {
     background-color: deeppink;
 }
+
+
+.linox {
+    color:rgba(113, 138, 14, 0.541);
+    text-decoration: none;
+}
+
+.linox:hover {
+    color:rgb(202, 10, 10);
+    text-decoration: underline;
+    text-decoration-color: blue;
+    cursor: pointer;
+}
+
+.linox:active {
+    color:black;
+    text-decoration-color: rgb(0, 183, 255);
+}
+
+.linox:visited {
+    color: rgb(123, 255, 0);
+}
+
+input{
+    width: 200px;
+    color: green;
+}
+
+input:disabled {
+    background-color: rgb(255, 0, 0);
+    width:100px;
+}
+
+input:hover {
+    background-color:blue;
+}
+
+input:focus {
+    width: 300px;
+}
+
+div:empty{
+    color: yellow;
+}
+
+div:not(:empty) {
+    background-color: orange;
+    cursor: pointer;
+    text-align: center;
+}
+
+p.main-text::before{
+    content:'123';
+    color: red;
+    text-decoration: wavy underline;
+    cursor:grab;
+    content: attr(class);
+}
+
+p.main-text::after{
+    color:aqua;
+    text-decoration: line-through;
+    cursor: help;
+    content: attr(title);
+}
+
+p.main-text:empty{
+    content: '123456789';
+    color: red;
+    text-decoration: wavy underline;
+    cursor:grab;
+}
+
+p.main-text:not(:empty){
+    color: rgb(132, 0, 255);
+    text-decoration: wavy underline;
+    cursor:grab;
+}
+
+p.main-text:not(:empty)::first-letter {
+    color: rgb(136, 255, 0);
+    font-size: 40px;
+}
+
+p.main-text:not(:empty)::first-line {
+    font-size: 40px;
+}
+
+p:first-of-type{
+    background-color: lime;
+}
+
+p:last-of-type{
+    background-color: rgb(0, 0, 0);
+}
