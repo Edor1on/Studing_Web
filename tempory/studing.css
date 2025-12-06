@@ -1,129 +1,197 @@
+/* =========================================
+   1. БАЗОВІ СЕЛЕКТОРИ ТА ПРІОРИТЕТНІСТЬ (SPECIFICITY)
+   Чим точніший селектор, тим він важливіший.
+   ========================================= */
+
+/* Тег (найслабший) */
 p {
-    color:red;
+    color: red;
 }
 
-b {
-    background-color:aqua;
-}
-
-.text-color.some {
-    color:chocolate;
-}
-
+/* Клас (сильніший за тег) */
 .text-color {
-    color:chartreuse;
+    color: chartreuse;
 }
 
+/* Ланцюжок класів (сильніший за один клас) */
+/* Вибере елемент, що має ОДРАЗУ два класи: .text-color та .some */
+.text-color.some {
+    color: chocolate;
+}
+
+/* ID (дуже сильний, перебиває класи) */
 #bold-text {
-    color:green;
+    color: green;
 }
 
-
+/* Комбо-селектор (найсильніший тут) */
+/* Класи + ID разом */
 .text-color.some#some-text {
     background-color: black;
 }
 
+/* Інші базові стилі */
+b {
+    background-color: aqua;
+}
+
+
+/* =========================================
+   2. КОМБІНАТОРИ (ВКЛАДЕНІСТЬ)
+   Як вибирати елементи всередині інших.
+   ========================================= */
+
+/* ПРОБІЛ: Усі <p>, що знаходяться в <div> (на будь-якому рівні вкладеності) */
 div p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: blueviolet;
 }
 
-div > p, 
+/* СТРІЛКА (>): Тільки безпосередні діти (перший рівень вкладеності) */
+div > p,
 span {
-    background-color: deeppink;
+    background-color: deeppink; /* Застосується і до span окремо через кому */
 }
 
+
+/* =========================================
+   3. ІНТЕРАКТИВНІ СТАНИ (ПОСИЛАННЯ ТА КНОПКИ)
+   :link, :visited, :hover, :active
+   ========================================= */
 
 .linox {
-    color:rgba(113, 138, 14, 0.541);
+    color: rgba(113, 138, 14, 0.541);
     text-decoration: none;
+    transition: 0.3s; /* Додав плавність для краси */
 }
 
+/* :visited - посилання, яке вже відвідали */
+.linox:visited {
+    color: rgb(123, 255, 0);
+}
+
+/* :hover - наведення курсору */
 .linox:hover {
-    color:rgb(202, 10, 10);
+    color: rgb(202, 10, 10);
     text-decoration: underline;
     text-decoration-color: blue;
     cursor: pointer;
 }
 
+/* :active - момент натискання */
 .linox:active {
-    color:black;
+    color: black;
     text-decoration-color: rgb(0, 183, 255);
 }
 
-.linox:visited {
-    color: rgb(123, 255, 0);
-}
 
-input{
+/* =========================================
+   4. РОБОТА З ФОРМАМИ (INPUT)
+   :focus, :disabled
+   ========================================= */
+
+input {
     width: 200px;
     color: green;
+    transition: width 0.3s ease; /* Анімація розширення */
 }
 
+/* Коли поле неактивне (атрибут disabled) */
 input:disabled {
     background-color: rgb(255, 0, 0);
-    width:100px;
+    width: 100px;
 }
 
 input:hover {
-    background-color:blue;
+    background-color: blue;
 }
 
+/* Коли поле у фокусі (клікнули всередину) */
 input:focus {
     width: 300px;
+    outline: none; /* Прибирає стандартну обводку браузера */
 }
 
-div:empty{
+
+/* =========================================
+   5. ЛОГІЧНІ ПСЕВДОКЛАСИ
+   :empty, :not(), :first-of-type
+   ========================================= */
+
+/* Якщо div порожній (немає навіть пробілу) */
+div:empty {
     color: yellow;
+    height: 20px; /* Додав висоту, щоб було видно пустий блок */
+    background: repeating-linear-gradient(45deg, black, transparent 10px);
 }
 
+/* Якщо div НЕ порожній */
 div:not(:empty) {
     background-color: orange;
     cursor: pointer;
     text-align: center;
+    margin-bottom: 10px; /* Відступ для краси */
 }
 
-p.main-text::before{
-    content:'123';
-    color: red;
-    text-decoration: wavy underline;
-    cursor:grab;
-    content: attr(class);
-}
-
-p.main-text::after{
-    color:aqua;
-    text-decoration: line-through;
-    cursor: help;
-    content: attr(title);
-}
-
-p.main-text:empty{
-    content: '123456789';
-    color: red;
-    text-decoration: wavy underline;
-    cursor:grab;
-}
-
-p.main-text:not(:empty){
-    color: rgb(132, 0, 255);
-    text-decoration: wavy underline;
-    cursor:grab;
-}
-
-p.main-text:not(:empty)::first-letter {
-    color: rgb(136, 255, 0);
-    font-size: 40px;
-}
-
-p.main-text:not(:empty)::first-line {
-    font-size: 40px;
-}
-
-p:first-of-type{
+/* Перший елемент p свого типу в батьківському блоці */
+p:first-of-type {
     background-color: lime;
 }
 
-p:last-of-type{
+/* Останній елемент p свого типу */
+p:last-of-type {
     background-color: rgb(0, 0, 0);
+    color: white; /* Щоб текст було видно на чорному */
 }
+
+
+/* =========================================
+   6. ПСЕВДОЕЛЕМЕНТИ (ДЕКОР ТА ГЕНЕРАЦІЯ)
+   ::before, ::after, ::first-letter
+   ========================================= */
+
+/* Додає контент ПЕРЕД елементом */
+p.main-text::before {
+    /* attr(class) витягує текст з назви класу в HTML! */
+    content: attr(class); 
+    color: red;
+    text-decoration: wavy underline;
+    cursor: grab;
+    margin-right: 5px;
+}
+
+/* Додає контент ПІСЛЯ елемента */
+p.main-text::after {
+    /* attr(title) витягує підказку з атрибута title */
+    content: attr(title);
+    color: aqua;
+    text-decoration: line-through;
+    cursor: help;
+    margin-left: 5px;
+}
+
+/* Стилізація першої літери (буквиця) */
+p.main-text:not(:empty)::first-letter {
+    color: rgb(136, 255, 0);
+    font-size: 40px;
+    font-weight: bold;
+    float: left; /* Часто додають для обтікання тексту */
+    line-height: 1;
+}
+
+/* Стилізація першого рядка тексту */
+p.main-text:not(:empty)::first-line {
+    font-size: 20px; /* Зменшив з 40px, щоб не перекривало літеру */
+    font-style: italic;
+}
+
+/* УВАГА: Властивість content працює лише в ::before та ::after.
+   В :empty вона не спрацює для виводу тексту на екран у більшості випадків.
+   Тому цей блок я закоментував як теоретичний приклад.
+*/
+/*
+p.main-text:empty {
+    content: '123456789'; 
+    color: red;
+}
+*/
