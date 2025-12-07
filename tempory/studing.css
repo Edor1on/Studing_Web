@@ -162,7 +162,8 @@ p.main-text::before {
 
 /* Додає контент ПІСЛЯ елемента */
 p.main-text::after {
-    /* attr(title) витягує підказку з атрибута title */
+    /* attr(title) витягує підказку з атрибута title
+    І також атрибут з попередньої, адже заборони немає */
     content: attr(title);
     color: aqua;
     text-decoration: line-through;
@@ -180,8 +181,8 @@ p.main-text:not(:empty)::first-letter {
 }
 
 /* Стилізація першого рядка тексту */
-p.main-text:not(:empty)::first-line {
-    font-size: 20px; /* Зменшив з 40px, щоб не перекривало літеру */
+p.main-text:empty::first-line {
+    font-size: 50px; /* Зменшив з 40px, щоб не перекривало літеру */
     font-style: italic;
 }
 
