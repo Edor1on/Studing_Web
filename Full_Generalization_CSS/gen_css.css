@@ -1,0 +1,263 @@
+/* =========================================
+   ШПАРГАЛКА: ОСНОВНІ CSS СЕЛЕКТОРИ та СТАНИ
+   ========================================= */
+
+/* Характеристика до всіх блоків (*' - скидаємо базові відступи) */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Базові стилі тіла документа (body) - останні застосовані */
+body {
+    /* Колір з останнього блоку твого коду */
+    background-color: black;
+    color: wheat;
+    padding-bottom: 50px;
+}
+
+/* =========================================
+   1. БАЗОВІ СЕЛЕКТОРИ ТА ПРІОРИТЕТНІСТЬ (SPECIFICITY)
+   ========================================= */
+
+/* Тег (найслабший) */
+p {
+    color: red; /* Буде перебито в кінці, якщо є сильніший селектор */
+}
+
+/* Клас (сильніший за тег) */
+.text-color {
+    color: chartreuse;
+}
+
+/* Ланцюжок класів (сильніший за один клас) */
+/* Вибере елемент, що має ОДРАЗУ два класи: .text-color та .some */
+.text-color.some {
+    color: chocolate;
+}
+
+/* ID (дуже сильний, перебиває класи) */
+#bold-text {
+    color: green;
+}
+
+/* Комбо-селектор (найсильніший тут) */
+/* Класи + ID разом */
+.text-color.some#some-text {
+    background-color: black;
+}
+
+/* Стилі для тегу <b> */
+b {
+    background-color: aqua;
+}
+
+
+/* =========================================
+   2. КОМБІНАТОРИ (ВКЛАДЕНІСТЬ)
+   ========================================= */
+
+/* ПРОБІЛ: Усі <p>, що знаходяться в <div> (на будь-якому рівні вкладеності) */
+div p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: blueviolet;
+}
+
+/* СТРІЛКА (>): Тільки безпосередні діти (перший рівень вкладеності) */
+div > p,
+span {
+    background-color: deeppink; /* Застосується і до span окремо через кому */
+}
+
+
+/* =========================================
+   3. ІНТЕРАКТИВНІ СТАНИ (ПОСИЛАННЯ ТА КНОПКИ)
+   ========================================= */
+
+.linox {
+    color: rgba(113, 138, 14, 0.541);
+    text-decoration: none;
+    transition: 0.3s; /* Додав плавність для краси */
+    padding: 10px;
+    display: inline-block;
+}
+
+/* :visited - посилання, яке вже відвідали */
+.linox:visited {
+    color: rgb(123, 255, 0);
+}
+
+/* :hover - наведення курсору */
+.linox:hover {
+    color: rgb(202, 10, 10);
+    text-decoration: underline;
+    text-decoration-color: blue;
+    cursor: pointer;
+}
+
+/* :active - момент натискання */
+.linox:active {
+    color: black;
+    text-decoration-color: rgb(0, 183, 255);
+}
+
+
+/* =========================================
+   4. РОБОТА З ФОРМАМИ (INPUT)
+   ========================================= */
+
+input {
+    width: 200px;
+    color: green;
+    transition: width 0.3s ease; /* Анімація розширення */
+    display: block;
+    margin: 5px 0 15px 0;
+}
+
+/* Коли поле неактивне (атрибут disabled) */
+input:disabled {
+    background-color: rgb(255, 0, 0);
+    width: 100px;
+}
+
+input:hover {
+    background-color: blue;
+}
+
+/* Коли поле у фокусі (клікнули всередину) */
+input:focus {
+    width: 300px;
+    outline: none; /* Прибирає стандартну обводку браузера */
+}
+
+
+/* =========================================
+   5. ЛОГІЧНІ ПСЕВДОКЛАСИ
+   ========================================= */
+
+/* Якщо div порожній (немає навіть пробілу) */
+div:empty {
+    color: yellow;
+    height: 20px; /* Додав висоту, щоб було видно пустий блок */
+    background: repeating-linear-gradient(45deg, black, transparent 10px);
+}
+
+/* Якщо div НЕ порожній */
+div:not(:empty) {
+    background-color: orange;
+    cursor: pointer;
+    text-align: center;
+    margin-bottom: 10px; /* Відступ для краси */
+    padding: 10px;
+}
+
+/* Перший елемент p свого типу в батьківському блоці */
+p:first-of-type {
+    background-color: lime;
+    color: black;
+}
+
+/* Останній елемент p свого типу */
+p:last-of-type {
+    background-color: rgb(0, 0, 0);
+    color: white; /* Щоб текст було видно на чорному */
+}
+
+
+/* =========================================
+   6. ПСЕВДОЕЛЕМЕНТИ (ДЕКОР ТА ГЕНЕРАЦІЯ)
+   ========================================= */
+
+/* Стилізація першої літери (буквиця) */
+p.main-text:not(:empty)::first-letter {
+    color: rgb(136, 255, 0);
+    font-size: 40px;
+    font-weight: bold;
+    float: left; /* Часто додають для обтікання тексту */
+    line-height: 1;
+}
+
+/* Додає контент ПЕРЕД елементом */
+p.main-text::before {
+    /* attr(class) витягує текст з назви класу в HTML! */
+    content: "«" attr(class) "» "; 
+    color: red;
+    text-decoration: wavy underline;
+    cursor: grab;
+    margin-right: 5px;
+}
+
+/* Додає контент ПІСЛЯ елемента */
+p.main-text::after {
+    /* attr(title) витягує підказку з атрибута title */
+    content: " «" attr(title) "»";
+    color: aqua;
+    text-decoration: line-through;
+    cursor: help;
+    margin-left: 5px;
+}
+
+/* Стилізація першого рядка тексту */
+p.main-text::first-line {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+
+/* =========================================
+   ДОДАТКОВІ СТИЛІ (ЗБІР З ДУБЛІКАТІВ)
+   ========================================= */
+   
+/* Імпорт шрифту */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
+
+/* Стилі для основного тексту (.main-text) - об'єднані */
+p.main-text {
+    color: aqua;
+    text-align: justify;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: lowercase; /* uppercase capitalize */
+    line-height: 1.5;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    /* Останній застосований шрифт */
+    font-family: "Playwrite NO", cursive;
+    margin: 20px;
+    padding: 10px;
+}
+
+/* Стилі для <b> всередині .main-text */
+p.main-text b {
+    font-style: normal;
+    font-weight: lighter;
+    color: yellow;
+    text-decoration: red underline;
+    cursor: pointer;
+}
+
+/* Стилі для #block / .block - об'єднані */
+#block, 
+.block {
+    background-color: brown;
+    color: rgb(0, 255, 76);
+    width: 300px;
+    height: 100px;
+    opacity: 0.8;
+    
+    /* Відступи */
+    margin: 20px 40px 100px 70px;
+    margin-left: 5px;
+    padding: 35px 20px;
+
+    /* Кордони та радіуси */
+    border: 5px dashed #5e0c49;
+    border-left: 0;
+    border-right: 10px solid black;
+    border-top: 15px double #7700ff;
+    border-bottom: 5px dotted #000000;
+    border-radius: 25px 15px 50px 100px;
+    border-bottom-right-radius: 0px;
+
+    display: inline-block;
+}

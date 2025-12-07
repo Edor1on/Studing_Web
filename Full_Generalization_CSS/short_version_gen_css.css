@@ -1,0 +1,70 @@
+/* ПІДКЛЮЧЕННЯ ШРИФТІВ */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
+
+/* ЗАГАЛЬНІ НАЛАШТУВАННЯ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white; /* Для світлої теми шпаргалки */
+    color: #333;
+    font-family: sans-serif;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* 1. ПРІОРИТЕТНІСТЬ */
+p { color: red; }
+.text-color { color: chartreuse; }
+.text-color.some { color: chocolate; }
+#bold-text { color: green; }
+.text-color.some#some-text { background-color: black; color: white; }
+b { background-color: aqua; }
+
+/* 2. КОМБІНАТОРИ */
+div p { background-color: blueviolet; color: white; }
+div > p, span { background-color: deeppink; }
+
+/* 3. ІНТЕРАКТИВ */
+.linox { 
+    color: rgba(113, 138, 14, 0.5); 
+    text-decoration: none; 
+    transition: 0.3s; 
+}
+.linox:hover { color: red; text-decoration: underline; cursor: pointer; }
+.linox:active { color: black; }
+
+/* 4. ФОРМИ */
+input { width: 200px; color: green; transition: width 0.3s; }
+input:disabled { background-color: red; width: 100px; }
+input:focus { width: 300px; outline: none; }
+
+/* 5. ЛОГІЧНІ ПСЕВДОКЛАСИ */
+div:empty { height: 20px; background: repeating-linear-gradient(45deg, black, transparent 10px); }
+p:first-of-type { background-color: lime; }
+p:last-of-type { background-color: black; color: white; }
+
+/* 6. ПСЕВДОЕЛЕМЕНТИ ТА ТЕКСТ */
+p.main-text {
+    color: aqua;
+    font-size: 20px;
+    font-family: "Playwrite NO", cursive;
+}
+p.main-text::before { content: attr(class); color: red; margin-right: 5px; }
+p.main-text::after { content: attr(title); color: aqua; margin-left: 5px; }
+p.main-text::first-letter { color: green; font-size: 40px; float: left; line-height: 1; }
+
+/* 7. BOX MODEL (БЛОК) */
+.block {
+    background-color: brown;
+    color: white;
+    width: 200px;
+    height: 100px;
+    border: 5px dashed #5e0c49;
+    border-radius: 25px 15px 50px 0;
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;
+}
