@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
+
+body {
+    background-color: black;
+    color: wheat;
+
+}
+
+p.main-text {
+    color:aqua;
+    text-align: justify;
+    font-size: 30px;
+    font-family: italic;
+    font-weight: bold;
+    text-transform: lowercase; /* uppercase capitalize */
+    line-height: 20px; /* -5px also */
+    word-spacing: 10px; /* -5px also */
+    letter-spacing: 5px; /* -5px also */
+    font-family: "Playwrite+NO"; /* почарк що зверху доданий через google font*/
+}
+
+p.main-text b {
+    font-style: normal;
+    font-weight: lighter;
+    color:yellow;
+    text-decoration: red underline;
+    cursor:pointer;
+}
