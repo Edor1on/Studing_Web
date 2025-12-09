@@ -3,81 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя CSS-Шпаргалка (Демо)</title>
+    <title>Cheat Sheet Preview</title>
     <link rel="stylesheet" href="../Full_Generalization_CSS/gen_css.css">
-    <!-- <link rel="stylesheet" href="../Full_Generalization_CSS/short_version_gen_css.css> -->
 </head>
 <body>
 
-    <h1>CSS Шпаргалка Адріана (Demo)</h1>
-    <hr>
+    <header>
+        HEADER (z-index: 2)
+        
+        <ul class="nav">
+            <li>Home</li>
+            <li>CSS</li>
+            <li>HTML</li>
+            <li>Contact</li>
+        </ul>
+    </header>
 
-    <h2>1. Специфічність селекторів (Specificity)</h2>
-    <p class="text-color some" id="some-text" title="Атрибут для ::after">
-        Цей текст має одразу Тег (p), Клас (.text-color), Ланцюжок (.some), ID (#some-text).
-        Колір буде визначати КОМБО-СЕЛЕКТОР (background: black).
-        <b>Жирний текст.</b>
-    </p>
-    <p class="text-color">Цей параграф використовує лише клас. Колір: chartreuse.</p>
-    <p>Звичайний абзац (Тег). Колір: red.</p>
-    <div id="bold-text">Це ID-селектор. Колір: green.</div>
+    <main>
+        <div id="add-to-card">+</div>
 
-    <hr>
+        <h3>Демонстрація Шпаргалки</h3>
 
-    <h2>2. Комбінатори (Вкладеність)</h2>
-    <div>
-        <p>Я прямий нащадок div (&gt; p). Маю рожевий фон.</p>
-        <div style="border: 1px dashed white; padding: 10px; margin-top: 5px;">
-            <p>Я ГЛИБОКО вкладений абзац (div p). Маю фіолетовий фон.</p>
+        <p class="main-text" title="tooltip">
+            Це <b>приклад</b> тексту для перевірки псевдоелементів ::before, ::after та ::first-letter.
+        </p>
+
+        <form>
+            <label>Input (Focus/Hover):</label>
+            <input type="text" placeholder="Клікни сюди...">
+            
+            <label>Disabled Input:</label>
+            <input type="text" placeholder="Не працює" disabled>
+        </form>
+
+        <a href="#" class="linox">Я посилання .linox (наведи на мене)</a>
+        <br><br>
+
+        <div class="block">
+            BOX MODEL<br>
+            Padding, Margin, Borders
         </div>
-        <span>Я SPAN, і я тут для тестування (div > p, span). Маю рожевий фон.</span>
-    </div>
 
-    <hr>
+        <div>
+            <p>Це p всередині div (фон blueviolet)</p>
+            <span>Це span (фон deeppink)</span>
+        </div>
 
-    <h2>3. Інтерактивні стани (:hover, :active)</h2>
-    <a href="https://example.com" class="linox">Наведи курсор (:hover)</a>
-    <a href="#" class="linox">Натисни та утримуй (:active)</a>
+        <p>Нижче порожній div (:empty)</p>
+        <div style="border:1px solid white"></div>
+    </main>
 
-    <hr>
-
-    <h2>4. Форми та стани (:focus, :disabled)</h2>
-    <form style="padding: 20px;">
-        <label>Інпут у фокусі:</label>
-        <input type="text" placeholder="Клікни для :focus">
+    <aside>
+        <h3>ASIDE</h3>
+        <p>Цей блок має <b>position: relative</b> та <b>top: -70px</b>.</p>
+        <p>Він "заїжджає" під Header, тому що у Header z-index: 2, а тут z-index: 1.</p>
         
-        <label>Вимкнений інпут:</label>
-        <input type="text" value="Disabled" disabled>
-    </form>
+        <br>
+        <p id="bold-text">Це текст з ID (Priority)</p>
+        <br>
+        <p class="text-color some" id="some-text">Combo Selector Test</p>
+    </aside>
 
-    <hr>
-
-    <h2>5. Логічні псевдокласи</h2>
-    <section style="padding: 20px;">
-        <p>Я - перший абзац у цій секції (:first-of-type).</p>
-        <div>Я div, який НЕ порожній (:not(:empty)).</div>
-        
-        <div></div> 
-        
-        <p>Звичайний абзац.</p>
-        <p>Я - останній абзац у цій секції (:last-of-type).</p>
-    </section>
-
-    <hr>
-
-    <h2>6. Псевдоелементи (::before, ::after, ::first-letter)</h2>
-    <p class="main-text" title="Це текст з атрибута Title">
-        Це абзац з класом .main-text. Він демонструє стилізацію
-        першої літери, а також ::before та ::after (які витягують дані з атрибутів).
-    </p>
-
-    <hr>
-
-    <h2 style="text-align: center;">Демонстрація стилів блоку (#block)</h2>
-    <div id="block" style="margin: 20px auto;">
-        Це блок з ID #block. Його вигляд визначають властивості з блоку #block, .block.
-        
-    </div>
+    <footer>
+        FOOTER (Очищує потік або просто внизу)
+    </footer>
 
 </body>
 </html>

@@ -1,24 +1,140 @@
-/* =========================================
-   ШПАРГАЛКА: ОСНОВНІ CSS СЕЛЕКТОРИ та СТАНИ
-   ========================================= */
+/* ============================================================
+   МЕГА-ШПАРГАЛКА: HTML/CSS (ADRIAN)
+   ============================================================ */
 
-/* Характеристика до всіх блоків (*' - скидаємо базові відступи) */
+/* ------------------------------------------------------------
+   1. БАЗОВІ НАЛАШТУВАННЯ (RESET & BODY)
+   ------------------------------------------------------------ */
+
+/* Характеристика до всіх блоків (* - скидаємо базові відступи) */
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; — Можна додати в майбутньому для зручності */
 }
 
-/* Базові стилі тіла документа (body) - останні застосовані */
 body {
-    /* Колір з останнього блоку твого коду */
-    background-color: black;
-    color: wheat;
+    background-color: rgb(0, 0, 0); /* Чорний фон (нове) */
+    color: wheat; /* Колір тексту (старе) */
+    height: 2000px; /* Для скролу (нове) */
     padding-bottom: 50px;
+    font-family: 'Times New Roman', Times, serif; /* Шрифт за замовчуванням */
 }
 
-/* =========================================
-   1. БАЗОВІ СЕЛЕКТОРИ ТА ПРІОРИТЕТНІСТЬ (SPECIFICITY)
-   ========================================= */
+/* ------------------------------------------------------------
+   2. LAYOUT (СТРУКТУРА СТОРІНКИ - НОВЕ)
+   Header, Footer, Main, Aside
+   ------------------------------------------------------------ */
+
+header, footer {
+    width: 100%;
+    height: 70px;
+    background-color: red;
+    text-align: center;
+    line-height: 70px;
+    color: aqua;
+    font-size: 20px;
+    /* padding-top: 40px; */
+    float: left;
+}
+
+header {
+    border-bottom: 4px solid rgb(229, 255, 0);
+    margin-bottom: 50px;
+    z-index: 2;
+    position: relative; /* Потрібно для z-index */
+}
+
+footer {
+    border-top: 4px solid rgb(229, 255, 0);
+    margin-top: 50px;
+}
+
+.nav {
+    color: #ffffff;
+    list-style: none;
+    display: block;
+    width: 50%;
+    margin-left: 25%;
+    float: left;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.nav li {
+    color: black;
+    display: inline;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid silver;
+    padding: 0 20px;
+}
+
+.nav li:not(:last-of-type) {
+    margin-right: 20px;
+}
+
+.nav li:hover {
+    background-color: rgb(0, 0, 0);
+    cursor: pointer;
+    color: #ffffff;
+}
+
+main {
+    text-decoration: underline; /* Спадщина з твого коду */
+    text-align: center;
+    font-size: 20px;
+    width: 40%;
+    margin-left: 10%;
+    background-color: #ffffff;
+    padding: 20px 2.5%;
+    float: left;
+    
+    /* Додаю relative, щоб позиціонувати елементи всередині main (якщо потрібно) */
+    position: relative; 
+}
+
+aside {
+    width: 20%;
+    border: 1px solid rgb(25, 0, 255);
+    margin-left: 10%;
+    background-color: #ffffff;
+    padding: 20px 2.5%;
+    float: left;
+
+    position: relative; /* relative, absolute, fixed, sticky. static - default */
+    top: -70px; /* зсув вгору */
+    z-index: 1;
+}
+
+/* ------------------------------------------------------------
+   3. POSITIONING (ПОЗИЦІОНУВАННЯ - НОВЕ)
+   Absolute, Relative, Z-index
+   ------------------------------------------------------------ */
+
+#add-to-card {
+    background-color: yellowgreen;
+    color: blueviolet;
+    font-size: 40px;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+
+    /* position: relative; віртуальне переміщення(браузер місце лишає, але його переносить) */
+    position: absolute; /* абсолютне переміщення(браузер місце не лишає, а переносить) */
+    top: 200px;
+    left: 70px;
+    cursor: pointer;
+}
+
+#add-to-card:hover {
+    background-color: rgb(59, 78, 20);
+}
+
+/* ------------------------------------------------------------
+   4. БАЗОВІ СЕЛЕКТОРИ ТА ПРІОРИТЕТНІСТЬ (SPECIFICITY)
+   ------------------------------------------------------------ */
 
 /* Тег (найслабший) */
 p {
@@ -31,7 +147,6 @@ p {
 }
 
 /* Ланцюжок класів (сильніший за один клас) */
-/* Вибере елемент, що має ОДРАЗУ два класи: .text-color та .some */
 .text-color.some {
     color: chocolate;
 }
@@ -42,52 +157,46 @@ p {
 }
 
 /* Комбо-селектор (найсильніший тут) */
-/* Класи + ID разом */
 .text-color.some#some-text {
     background-color: black;
 }
 
-/* Стилі для тегу <b> */
 b {
     background-color: aqua;
 }
 
+/* ------------------------------------------------------------
+   5. КОМБІНАТОРИ (ВКЛАДЕНІСТЬ)
+   ------------------------------------------------------------ */
 
-/* =========================================
-   2. КОМБІНАТОРИ (ВКЛАДЕНІСТЬ)
-   ========================================= */
-
-/* ПРОБІЛ: Усі <p>, що знаходяться в <div> (на будь-якому рівні вкладеності) */
+/* ПРОБІЛ: Усі <p>, що знаходяться в <div> */
 div p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: blueviolet;
 }
 
-/* СТРІЛКА (>): Тільки безпосередні діти (перший рівень вкладеності) */
+/* СТРІЛКА (>): Тільки безпосередні діти */
 div > p,
 span {
-    background-color: deeppink; /* Застосується і до span окремо через кому */
+    background-color: deeppink; 
 }
 
-
-/* =========================================
-   3. ІНТЕРАКТИВНІ СТАНИ (ПОСИЛАННЯ ТА КНОПКИ)
-   ========================================= */
+/* ------------------------------------------------------------
+   6. ІНТЕРАКТИВНІ СТАНИ (ПОСИЛАННЯ ТА КНОПКИ)
+   ------------------------------------------------------------ */
 
 .linox {
     color: rgba(113, 138, 14, 0.541);
     text-decoration: none;
-    transition: 0.3s; /* Додав плавність для краси */
+    transition: 0.3s;
     padding: 10px;
     display: inline-block;
 }
 
-/* :visited - посилання, яке вже відвідали */
 .linox:visited {
     color: rgb(123, 255, 0);
 }
 
-/* :hover - наведення курсору */
 .linox:hover {
     color: rgb(202, 10, 10);
     text-decoration: underline;
@@ -95,26 +204,23 @@ span {
     cursor: pointer;
 }
 
-/* :active - момент натискання */
 .linox:active {
     color: black;
     text-decoration-color: rgb(0, 183, 255);
 }
 
-
-/* =========================================
-   4. РОБОТА З ФОРМАМИ (INPUT)
-   ========================================= */
+/* ------------------------------------------------------------
+   7. РОБОТА З ФОРМАМИ (INPUT)
+   ------------------------------------------------------------ */
 
 input {
     width: 200px;
     color: green;
-    transition: width 0.3s ease; /* Анімація розширення */
+    transition: width 0.3s ease;
     display: block;
     margin: 5px 0 15px 0;
 }
 
-/* Коли поле неактивне (атрибут disabled) */
 input:disabled {
     background-color: rgb(255, 0, 0);
     width: 100px;
@@ -124,62 +230,68 @@ input:hover {
     background-color: blue;
 }
 
-/* Коли поле у фокусі (клікнули всередину) */
 input:focus {
     width: 300px;
-    outline: none; /* Прибирає стандартну обводку браузера */
+    outline: none;
 }
 
+/* ------------------------------------------------------------
+   8. ЛОГІЧНІ ПСЕВДОКЛАСИ
+   ------------------------------------------------------------ */
 
-/* =========================================
-   5. ЛОГІЧНІ ПСЕВДОКЛАСИ
-   ========================================= */
-
-/* Якщо div порожній (немає навіть пробілу) */
 div:empty {
     color: yellow;
-    height: 20px; /* Додав висоту, щоб було видно пустий блок */
+    height: 20px;
     background: repeating-linear-gradient(45deg, black, transparent 10px);
 }
 
-/* Якщо div НЕ порожній */
 div:not(:empty) {
-    background-color: orange;
+    /* Цей стиль може впливати на main/aside, бо вони теж div-подібні блоки, будь уважний */
+    /* background-color: orange; */ 
     cursor: pointer;
-    text-align: center;
-    margin-bottom: 10px; /* Відступ для краси */
-    padding: 10px;
+    /* text-align: center; - вимкнув, щоб не ламало layout */ 
 }
 
-/* Перший елемент p свого типу в батьківському блоці */
 p:first-of-type {
     background-color: lime;
     color: black;
 }
 
-/* Останній елемент p свого типу */
 p:last-of-type {
     background-color: rgb(0, 0, 0);
-    color: white; /* Щоб текст було видно на чорному */
+    color: white;
 }
 
+/* ------------------------------------------------------------
+   9. ПСЕВДОЕЛЕМЕНТИ ТА ДЕКОР
+   ------------------------------------------------------------ */
 
-/* =========================================
-   6. ПСЕВДОЕЛЕМЕНТИ (ДЕКОР ТА ГЕНЕРАЦІЯ)
-   ========================================= */
+/* Імпорт шрифту */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
 
-/* Стилізація першої літери (буквиця) */
+p.main-text {
+    color: aqua;
+    text-align: justify;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: lowercase;
+    line-height: 1.5;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    font-family: "Playwrite NO", cursive;
+    margin: 20px;
+    padding: 10px;
+}
+
 p.main-text:not(:empty)::first-letter {
     color: rgb(136, 255, 0);
     font-size: 40px;
     font-weight: bold;
-    float: left; /* Часто додають для обтікання тексту */
+    float: left;
     line-height: 1;
 }
 
-/* Додає контент ПЕРЕД елементом */
 p.main-text::before {
-    /* attr(class) витягує текст з назви класу в HTML! */
     content: "«" attr(class) "» "; 
     color: red;
     text-decoration: wavy underline;
@@ -187,9 +299,7 @@ p.main-text::before {
     margin-right: 5px;
 }
 
-/* Додає контент ПІСЛЯ елемента */
 p.main-text::after {
-    /* attr(title) витягує підказку з атрибута title */
     content: " «" attr(title) "»";
     color: aqua;
     text-decoration: line-through;
@@ -197,37 +307,11 @@ p.main-text::after {
     margin-left: 5px;
 }
 
-/* Стилізація першого рядка тексту */
 p.main-text::first-line {
     font-size: 1.2em;
     font-style: italic;
 }
 
-
-/* =========================================
-   ДОДАТКОВІ СТИЛІ (ЗБІР З ДУБЛІКАТІВ)
-   ========================================= */
-   
-/* Імпорт шрифту */
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
-
-/* Стилі для основного тексту (.main-text) - об'єднані */
-p.main-text {
-    color: aqua;
-    text-align: justify;
-    font-size: 30px;
-    font-weight: bold;
-    text-transform: lowercase; /* uppercase capitalize */
-    line-height: 1.5;
-    word-spacing: 10px;
-    letter-spacing: 5px;
-    /* Останній застосований шрифт */
-    font-family: "Playwrite NO", cursive;
-    margin: 20px;
-    padding: 10px;
-}
-
-/* Стилі для <b> всередині .main-text */
 p.main-text b {
     font-style: normal;
     font-weight: lighter;
@@ -236,21 +320,21 @@ p.main-text b {
     cursor: pointer;
 }
 
-/* Стилі для #block / .block - об'єднані */
+/* ------------------------------------------------------------
+   10. BOX MODEL (БЛОК)
+   ------------------------------------------------------------ */
+
 #block, 
 .block {
     background-color: brown;
     color: rgb(0, 255, 76);
-    width: 300px;
-    height: 100px;
+    width: 300px; /* Трохи змінив, щоб влізло в layout */
+    height: auto;
     opacity: 0.8;
     
-    /* Відступи */
-    margin: 20px 40px 100px 70px;
-    margin-left: 5px;
+    margin: 20px auto;
     padding: 35px 20px;
 
-    /* Кордони та радіуси */
     border: 5px dashed #5e0c49;
     border-left: 0;
     border-right: 10px solid black;
