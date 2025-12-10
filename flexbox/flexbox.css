@@ -1,0 +1,88 @@
+body {
+    height: 2000px;
+}
+
+/* 1. Вмикаємо Flexbox:
+.container {
+    display: flex; /* Елементи стають в ряд (вісь X)} */
+
+/* 2. Керуємо віссю X (Горизонталь) — justify-content:
+flex-start — Всі зліва (стандарт).
+center — Всі по центру.
+flex-end — Всі справа.
+space-between — Перший зліва, останній справа, решта рівномірно між ними (ІДЕАЛЬНО ДЛЯ МЕНЮ!).
+space-around — Рівні відступи навколо кожного. */
+
+/* 3. Керуємо віссю Y (Вертикаль) — align-items:
+stretch — Розтягнутися на всю висоту (стандарт).
+center — Рівно по центру висоти (те, про що мріяли роками!).
+flex-start — Притиснутися до верху. */
+
+/* 4. Відступи — gap (Кілер-фіча):
+gap: 20px; — Робить дірку між елементами. Не треба писати margin-right кожному елементу! */
+
+header, footer {
+    background-color: rebeccapurple;
+    color: white;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+}
+
+
+.conteiner_parent {
+    background-color:brown;
+    color: black;
+    width: 150px;
+    height: 150px;
+    padding: 50px;
+    text-align: center;
+    line-height: 150px;
+    margin: 40px;
+    display: flex;
+}
+
+.nav_flexbox {
+    background-color: yellow;
+    width: 200px;
+    height: 200px;
+    color: black;
+    margin: 40px;
+    padding: 50px;
+}
+
+.main_flexbox {
+    background-color: rgb(255, 0, 119);
+    width: 200px;
+    height: 200px;
+    color: black;
+    margin: 40px;
+    padding: 50px;
+}
+
+.aside_flexbox {
+    background-color: rgb(0, 255, 64);
+    width: 200px;
+    height: 200px;
+    color: black;
+    margin: 40px;
+    padding: 50px;
+}
+
+.section_flexbox {
+    background-color: aqua;
+    width: 200px;
+    height: 200px;
+    color: black;
+    margin: 40px;
+    padding: 50px;
+}
+
+.article_flexbox {
+    background-color: rgb(29, 0, 110);
+    width: 200px;
+    height: 200px;
+    color: black;
+    margin: 40px;
+    padding: 50px;
+}
