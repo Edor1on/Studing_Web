@@ -21,68 +21,85 @@ flex-start — Притиснутися до верху. */
 /* 4. Відступи — gap (Кілер-фіча):
 gap: 20px; — Робить дірку між елементами. Не треба писати margin-right кожному елементу! */
 
-header, footer {
-    background-color: rebeccapurple;
-    color: white;
-    height: 200px;
-    width: 100%;
-    text-align: center;
+/* Базові налаштування для наочності */
+* {
+    box-sizing: border-box; /* Щоб padding не ламав розміри */
+    margin: 0;
+    padding: 0;
 }
 
-
-.conteiner_parent {
-    background-color:brown;
-    color: black;
-    width: 150px;
-    height: 150px;
-    padding: 50px;
-    text-align: center;
-    line-height: 150px;
-    margin: 40px;
+body {
+    font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Щоб футер був знизу, якщо контенту мало */
 }
 
+/* Стилізація Хедера і Футера (вони не у Flex контейнері) */
+header, footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* --- ГОЛОВНИЙ КОНТЕЙНЕР (FLEX) --- */
+/* У твоєму HTML класі помилка "conteiner", пишу як у тебе */
+.conteiner_parent {
+    display: flex;          /* Вмикаємо Flexbox */
+    flex-wrap: wrap;        /* Дозволяємо перенос елементів на нові рядки */
+    gap: 10px;              /* Відступи між блоками */
+    padding: 10px;
+    flex: 1;                /* Розтягує контейнер на всю доступну висоту між хедером і футером */
+}
+
+/* --- ЕЛЕМЕНТИ ВСЕРЕДИНІ --- */
+/* Загальний стиль для всіх блоків, щоб їх було видно */
+.conteiner_parent > * {
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* 1. Навігація (зліва) */
 .nav_flexbox {
-    background-color: yellow;
-    width: 200px;
-    height: 200px;
-    color: black;
-    margin: 40px;
-    padding: 50px;
+    background-color: #e74c3c;
+    flex: 1 1 200px; /* grow: 1, shrink: 1, basis: 200px (мінімальна ширина) */
 }
 
+/* 2. Головний контент (центр) - найширший */
 .main_flexbox {
-    background-color: rgb(255, 0, 119);
-    width: 200px;
-    height: 200px;
-    color: black;
-    margin: 40px;
-    padding: 50px;
+    background-color: #3498db;
+    flex: 3 1 400px; /* grow: 3 - забирає в 3 рази більше вільного місця, ніж nav */
 }
 
+/* 3. Сайдбар (справа) */
 .aside_flexbox {
-    background-color: rgb(0, 255, 64);
-    width: 200px;
-    height: 200px;
-    color: black;
-    margin: 40px;
-    padding: 50px;
+    background-color: #9b59b6;
+    flex: 1 1 200px; /* Такий самий як nav */
 }
 
+/* 4. Секція та Стаття (внизу) */
+/* Ми хочемо, щоб вони зайняли новий рядок і поділили його навпіл */
 .section_flexbox {
-    background-color: aqua;
-    width: 200px;
-    height: 200px;
-    color: black;
-    margin: 40px;
-    padding: 50px;
+    background-color: #f1c40f;
+    flex: 1 1 45%; /* Базова ширина 45%, щоб влізли удвох + gap */
 }
 
 .article_flexbox {
-    background-color: rgb(29, 0, 110);
-    width: 200px;
-    height: 200px;
-    color: black;
-    margin: 40px;
-    padding: 50px;
+    background-color: #2ecc71;
+    flex: 1 1 45%;
+}
+
+/* Медіа-запит для мобільного (читатимеш в дорозі з телефону, тому актуально) */
+@media (max-width: 600px) {
+    .conteiner_parent {
+        flex-direction: column; /* На мобільному все стає в одну колонку */
+    }
+    
+    .conteiner_parent > * {
+        flex: 1 1 100%; /* Кожен елемент на всю ширину */
+    }
 }
