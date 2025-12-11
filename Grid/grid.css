@@ -1,0 +1,80 @@
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+
+body { background-color: #f4f4f4; padding-bottom: 50px; }
+
+.header {
+    background-color: #333;
+    color: white;
+    padding: 15px 30px;
+    
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.grid-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 15px;
+
+    display: grid;
+    
+    /* repeat(auto-fill, minmax(...)) - це ПРОФЕСІЙНИЙ прийом.
+       Він каже: "Створи стільки колонок, скільки влізе.
+       Кожна колонка мінімум 250px, але може розтягуватись (1fr)." */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    
+    gap: 20px;
+}
+
+/* --- 3. КАРТКА (FLEXBOX всередині) --- */
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 15px 20px 5px rgba(0,0,0,0.1);
+    
+    /* Робимо картку флекс-контейнером, щоб притиснути кнопку до низу */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Розтягуємо на всю висоту клітинки гріда */
+}
+
+.photo {
+    background-color: #ddd;
+    height: 150px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+h3 { margin-bottom: 10px; }
+p { color: #555; margin-bottom: 20px; flex-grow: 1; /* Текст штовхає ціну вниз */ }
+
+/* Блок з ціною і кнопкою */
+.price-block {
+    display: flex;
+    justify-content: space-between; /* Ціна зліва, кнопка справа */
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
