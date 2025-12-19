@@ -8,6 +8,10 @@ body {
 
 }
 
+root {
+    --main-color: red;
+}
+
 .main-wrapper {
     display: flex;
     flex-direction: row;
@@ -81,7 +85,7 @@ img {
     justify-content: center;
     width: 200px;
     height: 70px;
-    background-color: red;
+    background-color: van(--main-color);
     color: white;
     font-size: 30px;
     border: 1px solid white;
