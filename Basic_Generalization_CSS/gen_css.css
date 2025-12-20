@@ -1,347 +1,197 @@
-/* ============================================================
-   МЕГА-ШПАРГАЛКА: HTML/CSS (ADRIAN)
-   ============================================================ */
+/* --- 10. ЗМІННІ (Custom Properties) --- */
+:root {
+    --main-color: #6200ea;       /* Основний фіолетовий */
+    --accent-color: #03dac6;     /* Акцентний бірюзовий */
+    --text-color: #333;
+    --bg-color: #f5f5f5;
+    --card-bg: #ffffff;
+    --gap-size: 20px;
+}
 
-/* ------------------------------------------------------------
-   1. БАЗОВІ НАЛАШТУВАННЯ (RESET & BODY)
-   ------------------------------------------------------------ */
-
-/* Характеристика до всіх блоків (* - скидаємо базові відступи) */
+/* --- 1. ОСНОВИ (Reset + Font) --- */
 * {
-    padding: 0;
+    box-sizing: border-box; /* Важливо для Box Model */
     margin: 0;
-    /* box-sizing: border-box; — Можна додати в майбутньому для зручності */
+    padding: 0;
 }
 
 body {
-    background-color: rgb(0, 0, 0); /* Чорний фон (нове) */
-    color: wheat; /* Колір тексту (старе) */
-    height: 2000px; /* Для скролу (нове) */
-    padding-bottom: 50px;
-    font-family: 'Times New Roman', Times, serif; /* Шрифт за замовчуванням */
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 20px;
 }
 
-/* ------------------------------------------------------------
-   2. LAYOUT (СТРУКТУРА СТОРІНКИ - НОВЕ)
-   Header, Footer, Main, Aside
-   ------------------------------------------------------------ */
-
-header, footer {
-    width: 100%;
-    height: 70px;
-    background-color: red;
-    text-align: center;
-    line-height: 70px;
-    color: aqua;
-    font-size: 20px;
-    /* padding-top: 40px; */
-    float: left;
+/* --- 7. FLEXBOX (Глибоко) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Лого зліва, меню справа */
+    align-items: center;            /* Рівняємо по центру вертикально */
+    background-color: var(--main-color);
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-header {
-    border-bottom: 4px solid rgb(229, 255, 0);
-    margin-bottom: 50px;
-    z-index: 2;
-    position: relative; /* Потрібно для z-index */
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
-footer {
-    border-top: 4px solid rgb(229, 255, 0);
-    margin-top: 50px;
-}
-
-.nav {
-    color: #ffffff;
-    list-style: none;
-    display: block;
-    width: 50%;
-    margin-left: 25%;
-    float: left;
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.nav li {
-    color: black;
-    display: inline;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid silver;
-    padding: 0 20px;
-}
-
-.nav li:not(:last-of-type) {
-    margin-right: 20px;
-}
-
-.nav li:hover {
-    background-color: rgb(0, 0, 0);
-    cursor: pointer;
-    color: #ffffff;
-}
-
-main {
-    text-decoration: underline; /* Спадщина з твого коду */
-    text-align: center;
-    font-size: 20px;
-    width: 40%;
-    margin-left: 10%;
-    background-color: #ffffff;
-    padding: 20px 2.5%;
-    float: left;
-    
-    /* Додаю relative, щоб позиціонувати елементи всередині main (якщо потрібно) */
-    position: relative; 
-}
-
-aside {
-    width: 20%;
-    border: 1px solid rgb(25, 0, 255);
-    margin-left: 10%;
-    background-color: #ffffff;
-    padding: 20px 2.5%;
-    float: left;
-
-    position: relative; /* relative, absolute, fixed, sticky. static - default */
-    top: -70px; /* зсув вгору */
-    z-index: 1;
-}
-
-/* ------------------------------------------------------------
-   3. POSITIONING (ПОЗИЦІОНУВАННЯ - НОВЕ)
-   Absolute, Relative, Z-index
-   ------------------------------------------------------------ */
-
-#add-to-card {
-    background-color: yellowgreen;
-    color: blueviolet;
-    font-size: 40px;
-    height: 50px;
-    width: 50px;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 50%;
-
-    /* position: relative; віртуальне переміщення(браузер місце лишає, але його переносить) */
-    position: absolute; /* абсолютне переміщення(браузер місце не лишає, а переносить) */
-    top: 200px;
-    left: 70px;
-    cursor: pointer;
-}
-
-#add-to-card:hover {
-    background-color: rgb(59, 78, 20);
-}
-
-/* ------------------------------------------------------------
-   4. БАЗОВІ СЕЛЕКТОРИ ТА ПРІОРИТЕТНІСТЬ (SPECIFICITY)
-   ------------------------------------------------------------ */
-
-/* Тег (найслабший) */
-p {
-    color: red; /* Буде перебито в кінці, якщо є сильніший селектор */
-}
-
-/* Клас (сильніший за тег) */
-.text-color {
-    color: chartreuse;
-}
-
-/* Ланцюжок класів (сильніший за один клас) */
-.text-color.some {
-    color: chocolate;
-}
-
-/* ID (дуже сильний, перебиває класи) */
-#bold-text {
-    color: green;
-}
-
-/* Комбо-селектор (найсильніший тут) */
-.text-color.some#some-text {
-    background-color: black;
-}
-
-b {
-    background-color: aqua;
-}
-
-/* ------------------------------------------------------------
-   5. КОМБІНАТОРИ (ВКЛАДЕНІСТЬ)
-   ------------------------------------------------------------ */
-
-/* ПРОБІЛ: Усі <p>, що знаходяться в <div> */
-div p {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: blueviolet;
-}
-
-/* СТРІЛКА (>): Тільки безпосередні діти */
-div > p,
-span {
-    background-color: deeppink; 
-}
-
-/* ------------------------------------------------------------
-   6. ІНТЕРАКТИВНІ СТАНИ (ПОСИЛАННЯ ТА КНОПКИ)
-   ------------------------------------------------------------ */
-
-.linox {
-    color: rgba(113, 138, 14, 0.541);
+.nav-links a {
+    color: rgba(255,255,255, 0.7);
     text-decoration: none;
-    transition: 0.3s;
-    padding: 10px;
-    display: inline-block;
+    margin-left: 20px;
+    /* 6. АНІМАЦІЇ (Transition) */
+    transition: color 0.3s ease; 
 }
 
-.linox:visited {
-    color: rgb(123, 255, 0);
-}
-
-.linox:hover {
-    color: rgb(202, 10, 10);
-    text-decoration: underline;
-    text-decoration-color: blue;
-    cursor: pointer;
-}
-
-.linox:active {
-    color: black;
-    text-decoration-color: rgb(0, 183, 255);
-}
-
-/* ------------------------------------------------------------
-   7. РОБОТА З ФОРМАМИ (INPUT)
-   ------------------------------------------------------------ */
-
-input {
-    width: 200px;
-    color: green;
-    transition: width 0.3s ease;
-    display: block;
-    margin: 5px 0 15px 0;
-}
-
-input:disabled {
-    background-color: rgb(255, 0, 0);
-    width: 100px;
-}
-
-input:hover {
-    background-color: blue;
-}
-
-input:focus {
-    width: 300px;
-    outline: none;
-}
-
-/* ------------------------------------------------------------
-   8. ЛОГІЧНІ ПСЕВДОКЛАСИ
-   ------------------------------------------------------------ */
-
-div:empty {
-    color: yellow;
-    height: 20px;
-    background: repeating-linear-gradient(45deg, black, transparent 10px);
-}
-
-div:not(:empty) {
-    /* Цей стиль може впливати на main/aside, бо вони теж div-подібні блоки, будь уважний */
-    /* background-color: orange; */ 
-    cursor: pointer;
-    /* text-align: center; - вимкнув, щоб не ламало layout */ 
-}
-
-p:first-of-type {
-    background-color: lime;
-    color: black;
-}
-
-p:last-of-type {
-    background-color: rgb(0, 0, 0);
+/* Комбінатор наведення */
+.nav-links a:hover {
     color: white;
 }
 
-/* ------------------------------------------------------------
-   9. ПСЕВДОЕЛЕМЕНТИ ТА ДЕКОР
-   ------------------------------------------------------------ */
+/* --- 8. GRID (Сітка) --- */
+.dashboard-grid {
+    display: grid;
+    /* Магія Grid: створюємо колонки, які самі підлаштовуються */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--gap-size);
+}
 
-/* Імпорт шрифту */
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+NO:wght@100..400&display=swap');
+/* --- 2. BOX MODEL (Margin, Padding, Border) --- */
+.card {
+    background-color: var(--card-bg);
+    padding: 30px;              /* Внутрішній відступ */
+    border: 1px solid #ddd;     /* Рамка */
+    border-radius: 15px;
+    position: relative;         /* Для позиціонування псевдоелементів */
+    
+    /* Тінь для краси */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
 
-p.main-text {
-    color: aqua;
-    text-align: justify;
-    font-size: 30px;
+/* --- 4. ПСЕВДОЕЛЕМЕНТИ + ATTR() --- */
+/* Створюємо бейдж категорії, беручи текст з HTML атрибута data-category */
+.card::after {
+    content: attr(data-category); /* Магія attr() */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    background: var(--text-color);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
     font-weight: bold;
-    text-transform: lowercase;
-    line-height: 1.5;
-    word-spacing: 10px;
-    letter-spacing: 5px;
-    font-family: "Playwrite NO", cursive;
-    margin: 20px;
-    padding: 10px;
 }
 
-p.main-text:not(:empty)::first-letter {
-    color: rgb(136, 255, 0);
-    font-size: 40px;
+/* Декоративна лінія зліва */
+.card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20px;
+    bottom: 20px;
+    width: 4px;
+    background-color: var(--accent-color);
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+/* --- 3. СКЛАДНІ СЕЛЕКТОРИ + 5. ЛОГІЧНІ ПСЕВДОКЛАСИ --- */
+.feature-list {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.feature-list li {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+/* :first-of-type - вибирає тільки перший li */
+.feature-list li:first-of-type {
     font-weight: bold;
-    float: left;
-    line-height: 1;
+    color: var(--main-color);
 }
 
-p.main-text::before {
-    content: "«" attr(class) "» "; 
-    color: red;
-    text-decoration: wavy underline;
-    cursor: grab;
-    margin-right: 5px;
-}
-
-p.main-text::after {
-    content: " «" attr(title) "»";
-    color: aqua;
-    text-decoration: line-through;
-    cursor: help;
-    margin-left: 5px;
-}
-
-p.main-text::first-line {
-    font-size: 1.2em;
-    font-style: italic;
-}
-
-p.main-text b {
-    font-style: normal;
-    font-weight: lighter;
-    color: yellow;
-    text-decoration: red underline;
+/* :not - вибирає всі li, які НЕ мають класу .disabled */
+.feature-list li:not(.disabled):hover {
+    background-color: #f0f0f0;
     cursor: pointer;
 }
 
-/* ------------------------------------------------------------
-   10. BOX MODEL (БЛОК)
-   ------------------------------------------------------------ */
+/* Стиль для вимкненого елемента */
+.feature-list li.disabled {
+    color: #999;
+    text-decoration: line-through;
+}
 
-#block, 
-.block {
-    background-color: brown;
-    color: rgb(0, 255, 76);
-    width: 300px; /* Трохи змінив, щоб влізло в layout */
-    height: auto;
-    opacity: 0.8;
+/* :empty - ховає блок, якщо в ньому нічого немає */
+.empty-box:empty {
+    display: none; /* Якщо div порожній, його не буде видно */
+    /* Спробуй написати щось в HTML всередині .empty-box, і він з'явиться! */
+}
+
+.empty-box {
+    background: red;
+    height: 50px;
+    margin-top: 10px;
+}
+
+/* Внутрішній Flex для карток */
+.inner-flex {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.box {
+    flex: 1; /* Кожен блок займає рівну частину */
+    background: var(--accent-color);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* Кнопка з анімацією */
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* Анімація розміру */
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn:hover {
+    transform: scale(1.1); /* Збільшення при наведенні */
+}
+
+/* --- 9. АДАПТИВНІСТЬ (Media Queries) --- */
+@media (max-width: 600px) {
+    /* На мобільному меню стає стовпчиком */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
     
-    margin: 20px auto;
-    padding: 35px 20px;
-
-    border: 5px dashed #5e0c49;
-    border-left: 0;
-    border-right: 10px solid black;
-    border-top: 15px double #7700ff;
-    border-bottom: 5px dotted #000000;
-    border-radius: 25px 15px 50px 100px;
-    border-bottom-right-radius: 0px;
-
-    display: inline-block;
+    /* Змінюємо сітку на одну колонку (хоча auto-fit це і так робить, але для прикладу) */
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    body {
+        padding: 10px;
+    }
 }

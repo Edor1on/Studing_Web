@@ -3,70 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cheat Sheet Preview</title>
+    <title>CSS Master Cheat Sheet</title>
     <link rel="stylesheet" href="../Basic_Generalization_CSS/gen_css.css">
 </head>
 <body>
 
-    <header>
-        HEADER (z-index: 2)
-        
-        <ul class="nav">
-            <li>Home</li>
-            <li>CSS</li>
-            <li>HTML</li>
-            <li>Contact</li>
-        </ul>
+    <header class="navbar">
+        <div class="logo">Adrian.CSS</div>
+        <nav class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">Cheatsheet</a>
+            <a href="#">Contact</a>
+        </nav>
     </header>
 
     <main>
-        <div id="add-to-card">+</div>
-
-        <h3>Демонстрація Шпаргалки</h3>
-
-        <p class="main-text" title="tooltip">
-            Це <b>приклад</b> тексту для перевірки псевдоелементів ::before, ::after та ::first-letter.
-        </p>
-
-        <form>
-            <label>Input (Focus/Hover):</label>
-            <input type="text" placeholder="Клікни сюди...">
-            
-            <label>Disabled Input:</label>
-            <input type="text" placeholder="Не працює" disabled>
-        </form>
-
-        <a href="#" class="linox">Я посилання .linox (наведи на мене)</a>
-        <br><br>
-
-        <div class="block">
-            BOX MODEL<br>
-            Padding, Margin, Borders
-        </div>
-
-        <div>
-            <p>Це p всередині div (фон blueviolet)</p>
-            <span>Це span (фон deeppink)</span>
-        </div>
-
-        <p>Нижче порожній div (:empty)</p>
-        <div style="border:1px solid white"></div>
-    </main>
-
-    <aside>
-        <h3>ASIDE</h3>
-        <p>Цей блок має <b>position: relative</b> та <b>top: -70px</b>.</p>
-        <p>Він "заїжджає" під Header, тому що у Header z-index: 2, а тут z-index: 1.</p>
+        <h1>CSS Master Project 🚀</h1>
         
-        <br>
-        <p id="bold-text">Це текст з ID (Priority)</p>
-        <br>
-        <p class="text-color some" id="some-text">Combo Selector Test</p>
-    </aside>
+        <div class="dashboard-grid">
 
-    <footer>
-        FOOTER (Очищує потік або просто внизу)
-    </footer>
+            <article class="card" data-category="DESIGN">
+                <h2>Box Model Card</h2>
+                <p>Тут ми тестуємо відступи, рамки та псевдоелемент attr().</p>
+                <button class="btn">Hover me!</button>
+            </article>
+
+            <article class="card" data-category="LOGIC">
+                <h2>Logical Selectors</h2>
+                <ul class="feature-list">
+                    <li>Перший елемент (:first-of-type)</li>
+                    <li>Звичайний елемент</li>
+                    <li>Звичайний елемент</li>
+                    <li class="disabled">Вимкнений елемент</li>
+                </ul>
+                <div class="empty-box"></div> 
+            </article>
+
+            <article class="card" data-category="LAYOUT">
+                <h2>Complex Layout</h2>
+                <div class="inner-flex">
+                    <div class="box">1</div>
+                    <div class="box">2</div>
+                    <div class="box">3</div>
+                </div>
+            </article>
+
+        </div>
+    </main>
 
 </body>
 </html>
