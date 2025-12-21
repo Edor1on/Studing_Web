@@ -65,12 +65,54 @@ console.log(Math.pi); //Math.sin Math.cos Math.abs Math.min Math.max
 console.log(Math.max(-1, 2, 10, 5));
 
 
-function FollowersButton(){
-    isFollowing = false;
-    if (isFollowing = false){
 
+let followers1 = 1000;
+let isFollowing1 = false;
+
+function FollowersButton(){
+    if (isFollowing1 === false){
+        console.log("Підписатись");
+
+        followers1++;
+        isFollowing1 = true;
     }
-    else if(isFollowing = true){
-        folowes++
+    else {
+        console.log("відписатись");
+
+        followers1--;
+        isFollowing1 = false;
     }
 }
+console.log("Підписники: " + followers1);
+
+
+// версія для сайту (імба + нга замітку)
+
+let followers = 1000;
+let isFollowing = false;
+
+// Знаходимо елементи на сторінці
+const btn = document.querySelector('.btn-follow');
+const counter = document.querySelector('.counter');
+
+// Вішаємо клік на кнопку (замість виклику функції вручну)
+btn.addEventListener('click', function() {
+    
+    if (isFollowing === false) {
+        // Логіка (Змінюємо вигляд сайту)
+        btn.innerText = "Following";      // Змінюємо текст кнопки
+        btn.style.backgroundColor = "gray"; // Змінюємо колір
+        followers++;                      // Математика
+        isFollowing = true;               // Змінюємо статус
+
+    } else {
+        // Логіка (Повертаємо назад)
+        btn.innerText = "Follow";
+        btn.style.backgroundColor = "red";
+        followers--;
+        isFollowing = false;
+    }
+
+    // Оновлюємо лічильник на екрані
+    counter.innerText = followers + "k"; 
+});
