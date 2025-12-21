@@ -4,7 +4,7 @@ document.write("!!!");
 
 console.log("Hello Java script (print)");
 console.error("error");
-console.warm("warn");
+console.warn("warn");
 console.info("info"); //info=log
 
 
@@ -12,7 +12,7 @@ console.info("info"); //info=log
 
 var var_num; // var = old
 
-numik = 5;
+let numik = 5;
 
 console.log(var_num);
 
@@ -59,7 +59,18 @@ console.log(num3 + num4);
 num5 += +5; // + - * /
 numm++; //++ --
 
-let pi = Math.pi;
+let pi = Math.PI;
 
 console.log(Math.pi); //Math.sin Math.cos Math.abs Math.min Math.max
 console.log(Math.max(-1, 2, 10, 5));
+
+
+function FollowersButton(){
+    isFollowing = false;
+    if (isFollowing = false){
+
+    }
+    else if(isFollowing = true){
+        folowes++
+    }
+}
