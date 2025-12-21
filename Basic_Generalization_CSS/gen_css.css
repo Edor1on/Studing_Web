@@ -25,8 +25,8 @@ body {
 /* --- 7. FLEXBOX (Глибоко) --- */
 .navbar {
     display: flex;
-    justify-content: space-between; /* Лого зліва, меню справа */
-    align-items: center;            /* Рівняємо по центру вертикально */
+    justify-content: space-between;
+    align-items: center;        
     background-color: var(--main-color);
     padding: 15px 30px;
     border-radius: 10px;
@@ -64,12 +64,11 @@ body {
 /* --- 2. BOX MODEL (Margin, Padding, Border) --- */
 .card {
     background-color: var(--card-bg);
-    padding: 30px;              /* Внутрішній відступ */
-    border: 1px solid #ddd;     /* Рамка */
+    padding: 30px;         
+    border: 1px solid #ddd;   
     border-radius: 15px;
-    position: relative;         /* Для позиціонування псевдоелементів */
+    position: relative;       
     
-    /* Тінь для краси */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
@@ -82,7 +81,7 @@ body {
     right: 10px;
     font-size: 10px;
     background: var(--text-color);
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 3px 8px;
     border-radius: 4px;
     font-weight: bold;
