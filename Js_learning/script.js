@@ -116,3 +116,57 @@ btn.addEventListener('click', function() {
     // Оновлюємо лічильник на екрані
     counter.innerText = followers + "k"; 
 });
+
+
+
+// умовні конструкції
+
+let ppp = 15;
+let isHaspenis = true;
+
+if (ppp == 15) {        // >= <= = != ===
+    console.log("True");
+    if (isHaspenis == true) {
+        console.log("This is a boy")
+    }
+}
+else if (ppp > 15) {
+    console.log("is 15");
+        if (!isHaspenis) {
+        console.log("This is a girl")
+    }
+}
+else if (ppp < 15 && ishaspenis) { // || - хочаб одна з двох коректна
+    console.log("Yurs");
+}
+else {
+    console.log(" isn't 10");       // круглих дужок не потрбує, бо це для решти
+    ppp += 5;
+}
+
+
+
+let string = "word";
+
+if (string != "some") {
+    console.log("True");
+}
+
+
+
+// switch
+let qweqrty = "cam";
+
+switch (qwerty){
+    case "Yura":
+        console.log("not cam, but switch");
+        break;
+    case "cam":
+        console.log("cam");
+        break;
+    case "gg wp":
+        console.log("not cam, but gg wp");
+        break;
+    default:
+        console.log("loh");
+}
