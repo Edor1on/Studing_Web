@@ -170,3 +170,27 @@ switch (qwerty){
     default:
         console.log("loh");
 }
+
+
+// масиви
+
+let data_old = new Array [8, 9, 7]; //стара версія
+
+// нова версія
+let data = [1, 2, 4, 5.45, "qwer4", true, [54, "nweArray"]];
+
+console.log("deta"); // вивід масиву
+data[0] = "присвоєння нового елементу";
+console.log(data[2] ) //вивід 3-го елемента, бо поч з 0
+console.log(data.length);
+
+let Matrix = [
+    [5, 6],
+    ["word", true],
+    [false, 4.823, 0]
+];
+
+Matrix[0][0] = 60; //надаємо знайчення першому елементу першого масиву
+console.log(Matrix[2][1]) //вивід 2-го елементу третього масиву
+console.log(Matrix.length) // виведе 3, оскільки є 3 масиви.
+console.log(Matrix[1].length) //довжина 2-го рядка
