@@ -227,7 +227,7 @@ for (p = 0; p <= 10; p++) {
 
 let nums = [5, 23, 451, 54, 65, 33];
 
-for (j = 0; j = nums.length; i++){
-    nums *= 2;  // виведуться значення в 2 раза більші
+for (j = 0; j < nums.length; j++){
+    nums[j] *= 2;  // виведуться значення в 2 раза більші
     console.log("Elements is: " + nums[j]);
 }
