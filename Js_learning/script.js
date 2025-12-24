@@ -194,3 +194,40 @@ Matrix[0][0] = 60; //надаємо знайчення першому елеме
 console.log(Matrix[2][1]) //вивід 2-го елементу третього масиву
 console.log(Matrix.length) // виведе 3, оскільки є 3 масиви.
 console.log(Matrix[1].length) //довжина 2-го рядка
+
+
+// цикли
+
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+    for (let j = 1000; j > 10; j /= 2) {
+        console.log(j);
+    }
+}
+
+let y = 0;
+while (y < 15) {
+    console.log(y);
+    y += 2;
+}
+
+let u = 100;
+do{
+    console.log(u);
+    u /= 2;
+} while (u > 10);
+
+
+for (p = 0; p <= 10; p++) {
+    if (p==8) break; // зупиняємо цикл
+    console.log(p);
+
+    if (p % 2 == 0) continue; //виведе тільки непарні, бо парні буде скіпати
+}
+
+let nums = [5, 23, 451, 54, 65, 33];
+
+for (j = 0; j = nums.length; i++){
+    nums *= 2;  // виведуться значення в 2 раза більші
+    console.log("Elements is: " + nums[j]);
+}
