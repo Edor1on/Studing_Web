@@ -323,13 +323,13 @@ function BtnDblclick(){
 }
 
 function inputButton(el) {
-    if (el.value = "font"){
+    if (el.value == "font"){
         el.style.fontSize = "20px";
     }
-    else if (el.value = "color"){
+    else if (el.value == "color"){
         el.style.color = "red";
     }
-    else if (el.value = "bg"){
+    else if (el.value == "bg"){
         el.style.backgroundColor = "black";
     }
 }
