@@ -8,6 +8,13 @@
 <body>
     <script src="..//Js_learning/script.js"></script>
 
+    <button onclick="Btnclick()">Натисни на мене</button>
+    <button ondblclick="Btnclick()">Натисни на мене</button>
+    <button name="New value" onclick="Btnclick(this)" ondblclick="BtnDblclick()">Натисни на мене</button>  <!-- може бути скільки завгодно таких функцій -->
+    <!-- onmousemove onmousedown onmouseenter onmouseleave oninput onkeydown onkeyup -->
+
+    <input type="text" oninput="inputButton(this)">
+
     <nonscript>не працює js</nonscript>
 </body>
 </html>
