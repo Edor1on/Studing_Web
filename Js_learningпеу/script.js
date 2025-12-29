@@ -1,5 +1,5 @@
-// вивід
-document.write("Hello World"); // застаріле
+// вивід, але застаріле
+document.write("Hello World"); 
 document.write("!!!");
 
 console.log("Hello Java script (print)");
@@ -86,7 +86,7 @@ function FollowersButton(){
 console.log("Підписники: " + followers1);
 
 
-// версія для сайту (імба + нга замітку)
+// версія для сайту (імба + на замітку)
 
 let followers = 1000;
 let isFollowing = false;
@@ -333,3 +333,113 @@ function inputButton(el) {
         el.style.backgroundColor = "black";
     }
 }
+
+
+
+// Робота з HTML та обробка форм за допомогою JS
+
+let block = document.getElementById("some-block");
+block.innerHTML = "Hello <b>World</b>!!!";
+block.innerText = "Hello <b>World</b>!!!"; // читає все як текст 
+block.style.color = "red";
+block.style.backgroundColor = "black";
+block.style.fontSize = "30px";
+block.className = "block"
+
+console.log(block.style.color);
+
+document.getElementByClassName("para").innerHTML = "New Text";
+
+// let spans = document.getElementsByTagName("span");
+let spans = document.getElementsByClassName("el_span");
+
+for (let i = 0; i < spans.length; i++) {
+    spans[i].style.fontSize = "95px";
+    spans[i].title = spans[i].innerText + "!";
+}
+
+
+
+// Знаходимо форму
+let form = document.getElementById("myform");
+
+// Вішаємо слухача подій (правильно: "submit")
+form.addEventListener("submit", function(e) {
+    // 1. Зупиняємо відправку, щоб сторінка не блимнула
+    e.preventDefault();
+
+    // 2. Отримуємо значення (тепер без пробілів воно знайдеться)
+    let username = form.username.value;
+    let email = form.email.value;
+    let pass = form.password.value;
+    let gender = form.gender.value;
+
+    let error = '';
+
+    // Валідація
+    if (username.length < 2) {
+        error = 'Ім\'я занадто мале';
+    } else if (email.length < 2 || !email.includes("@")) {
+        error = 'Некоректний email';
+    } else if (pass.length < 8) {
+        error = 'Пароль має бути від 8 символів';
+    } else if (gender == "") {
+        error = "Виберіть стать";
+    }
+
+    // Якщо є помилка — показуємо і виходимо
+    if (error != '') {
+        document.getElementById('error').innerText = error;
+        return; // Зупиняємо функцію тут
+    }
+
+    // Якщо дійшли сюди — все ок
+    document.getElementById('error').innerText = '';
+    alert("Дані відправлено! Переходимо на сайт Політеху...");
+    window.location = 'https://lpnu.ua';
+});
+
+
+
+
+
+// варінат 2
+
+// function checkform(el) {
+//     //alert("yes");
+//     // let username = document.getElementById("username").value;
+//     // console.log(username);
+
+//     let username = el.username.value;
+//     let email = el.email.value;
+//     let pass = el.password.value;
+//     let gender = el.gender.value;
+//     console.log(username);
+
+//     let error = '';
+//     if (username.length < 1){
+//         error = 'ім\'я занадто мале';
+//     }
+//     else if(email.length < 2){
+//         error = 'Email надто короткий';
+//     }
+//     else if(!email.includes("@")){
+//         error = 'Email не має \'@\'';
+//     }
+//     else if(pass.length < 8){
+//         error = 'password надто короткий';
+//     }
+//     else if(gender == null || gender == ''){
+//         error = "Виберіть гендер";
+//     }
+
+//     if (error != ''){
+//         document.getElementById('error').innerText = error;
+//         return false;
+//     }
+
+//     document.getElementById('error'). innerText = '';
+//     window.location = 'https://lpnu.ua';
+
+//     return false;
+// }

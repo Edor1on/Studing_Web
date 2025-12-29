@@ -1,0 +1,35 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+body {
+    background-color: rgb(12, 12, 12);
+    height: auto;
+    width: 700px;
+    color: yellow;
+}
+
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    background-color: rgb(43, 40, 40);
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    border-radius: 1px solid red;
+}
+
+input:after {
+    background-color: aliceblue;
+}
