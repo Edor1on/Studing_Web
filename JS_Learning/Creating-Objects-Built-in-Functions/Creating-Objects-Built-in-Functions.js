@@ -11,7 +11,7 @@ setInterval(function(){
 }, 1000);
 
 let arr = [1, 5, 3, true, "grey"];
-console.log(arr.sort().reverse()); //.length() 
+console.log(arr.sort().reverse()); //.length
 
 
 let user = prompt("Enter films: ");
