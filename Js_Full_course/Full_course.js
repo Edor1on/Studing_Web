@@ -405,7 +405,7 @@ let num = 20.33333;
 // num = num.toFixed(2); Округлює число до n знаків після коми та перетворює його на рядок. Якщо дужки порожні, округлює до цілого.
 // num = num.toFixed(3);
 // num = num.toFixed();
-
+``
 // num = num.toPrecision(3); Метод toPrecision(n): Округляє число до вказаної загальної кількості значущих цифр.
 
 num = num.toString().length;
