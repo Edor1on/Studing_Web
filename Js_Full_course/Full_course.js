@@ -430,4 +430,83 @@ console.log(typeof num)
 const maxNumber = Number.MAX_VALUE;
 const minNumber = Number.MIN_VALUE;
 
-console.log(minNumber)
+console.log(minNumber);
+
+// Робота з об'єктом Math
+
+// Знаходження мінімального та максимального числа
+x = Math.min(4, 7, 2, 13); // x = 2
+x = Math.max(4, 7, 2, 13); // x = 13
+
+// --- Округлення ---
+
+// Math.ceil — округлює до найближчого більшого цілого
+x = Math.ceil(5.3); // x = 6
+
+// Math.floor — округлює до найближчого меншого цілого
+x = Math.floor(5.3); // x = 5
+
+// Math.round — округлює за математичними правилами (до найближчого цілого)
+x = Math.round(5.3); // x = 5
+x = Math.round(5.6); // x = 6
+
+console.log(x);
+
+
+// --- Math ---
+
+// Робота з об'єктом Math
+
+// Знаходження мінімального та максимального числа
+x = Math.min(4, 7, 2, 13); // x = 2
+x = Math.max(4, 7, 2, 13); // x = 13
+
+// --- Округлення ---
+
+// Math.ceil — округлює до найближчого більшого цілого
+x = Math.ceil(5.3); // x = 6
+
+// Math.floor — округлює до найближчого меншого цілого
+x = Math.floor(5.3); // x = 5
+
+// Math.round — округлює за математичними правилами (до найближчого цілого)
+x = Math.round(5.3); // x = 5
+x = Math.round(5.6); // x = 6
+
+console.log(x);
+
+
+// --- Math object ---
+
+
+// Знаходження мінімального та максимального числа
+x = Math.min(4, 7, 2, 13); // x = 2
+x = Math.max(4, 7, 2, 13); // x = 13
+
+// --- Округлення ---
+
+x = Math.ceil(5.3);   // x = 6 (до більшого цілого)
+x = Math.floor(5.9);  // x = 5 (до меншого цілого)
+x = Math.round(5.3);  // x = 5 (за математичними правилами)
+x = Math.round(5.6);  // x = 6
+
+// Відкидання дробової частини (просто залишає ціле число)
+x = Math.trunc(13.38); // x = 13
+x = Math.trunc(99.76); // x = 99
+
+// --- Піднесення до степеня ---
+
+x = Math.pow(3, 2); // 3 у квадраті = 9
+x = Math.pow(3, 3); // 3 у кубі = 27
+
+x = Math.sqrt(81);
+x = Math.abs(-234);
+
+
+// Random
+
+x = Math.random();
+// від 1-50
+x = Math.floor(Math.random() * 100 + 1);
+
+console.log(x);
