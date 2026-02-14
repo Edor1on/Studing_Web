@@ -1,0 +1,14 @@
+.container {
+    width: 400px;
+    margin: 0 auto; /* Центрує контейнер по горизонталі */
+}
+
+.image-container {
+    text-align: center; /* Центрує вміст (картинку і кнопки) */
+}
+
+.img {
+    display: none; /* Ховає картинку за замовчуванням */
+    width: 70%;
+    margin-bottom: 10px;
+}
